@@ -1,0 +1,76 @@
+<configs>
+
+	<append xpath="/blocks">
+
+	<block name="gupEmptyFrame"> 
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="Material" value="Mwood_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Texture" value="293"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Model" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCardFrameEmpty.prefab"/>
+			<property name="MultiBlockDim" value="1,1,1"/>      
+			<drop event="Destroy" count="0"/>
+			<property name="FilterTags" value="fbuilding,fdesign"/>
+			<property name="SortOrder1" value="40z0"/>
+			<property name="SortOrder2" value="0002"/>
+			<property name="CustomIcon" value="guppyCardFrameEmpty" />   
+			<property name="CanPickup" value="true" param1="guppyCardFrame"/>			
+		</block>
+		
+		<block name="guppyCardFrame"> 
+			<property name="Tags" value="guppyCardFrame"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="Material" value="Mwood_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Texture" value="293"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Model" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCardFrame.prefab"/>
+			<property name="MultiBlockDim" value="1,1,1"/>      
+			<drop event="Destroy" count="0"/>
+			<property name="FilterTags" value="fbuilding,fdesign"/>
+			<property name="SortOrder1" value="40z0"/>
+			<property name="SortOrder2" value="0002"/>
+			<property name="CustomIcon" value="guppyCardFrame" />   
+			<property name="CanPickup" value="true" param1="guppyCardFramePlaceable"/>			
+		</block>
+		
+		<block name="guppyCardFramePlaceable"> 
+			<property name="Tags" value="guppyCardFrame"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="Material" value="Mwood_weak"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Texture" value="293"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Model" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCardFrame.prefab"/>
+			<property name="MultiBlockDim" value="1,1,1"/>      
+			<drop event="Destroy" count="0"/>
+			<property name="FilterTags" value="fbuilding,fdesign"/>
+			<property name="SortOrder1" value="40z0"/>
+			<property name="SortOrder2" value="0002"/>
+			<property name="CustomIcon" value="guppyCardFrame" />   
+			<property name="CanPickup" value="true" param1="guppyCardFramePlaceable"/>			
+		</block>		
+
+	</append>
+	
+		<append xpath="/blocks/block[@name='paintingBen']">
+			<property name="CanPickup" value="true" param1="paintingBen"/>	
+		</append>
+		<append xpath="/blocks/block[@name='paintingLorien']">
+			<property name="CanPickup" value="true" param1="paintingLorien"/>	
+		</append>
+		<append xpath="/blocks/block[@name='paintingDerek']">
+			<property name="CanPickup" value="true" param1="paintingDerek"/>	
+		</append>
+		<append xpath="/blocks/block[@name='paintingNoah']">
+			<property name="CanPickup" value="true" param1="paintingNoah"/>	
+		</append>
+		<append xpath="/blocks/block[@name='paintingDuke']">
+			<property name="CanPickup" value="true" param1="paintingDuke"/>	
+		</append>
+		<append xpath="/blocks/block[@name='paintingKen']">
+			<property name="CanPickup" value="true" param1="paintingKen"/>	
+		</append>
+	
+</configs>

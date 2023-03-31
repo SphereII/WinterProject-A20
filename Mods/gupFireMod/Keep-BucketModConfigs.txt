@@ -1,0 +1,194 @@
+<!--  	<buff name="buffAddWaterInside" name_key="a" description_key="d" tooltip_key="f">
+		<stack_type value="ignore"/>
+		<duration value=".1"/>
+		<effect_group>
+			<requirement name="!IsFPV"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/gupBucketWater.unity3d?guppyBucketWaterInside.prefab" parent_transform="LeftHand" local_offset="-0.15,.2,-.2" local_rotation="0,25,180"/>  
+		</effect_group>
+	</buff> -->
+	
+	<buff name="buffSetBucketCVarHit">
+		<stack_type value="ignore"/>
+		<duration value=".1"/>
+		<effect_group>
+			<requirement name="CVarCompare" cvar="gupUseWater" operation="LT" value="10"/>
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffWaterSpray"/>
+		</effect_group>
+	</buff>	
+	
+	<buff name="buffSetBucketCVarMiss">
+		<stack_type value="ignore"/>
+		<duration value=".1"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffWaterSpray">
+				<!--<requirement name="CVarCompare" cvar="gupUseWater" operation="GT" value="10"/>-->
+			</triggered_effect>
+		</effect_group>
+	</buff>		
+	
+	<buff name="buffSetSecondaryCvar">
+		<stack_type value="ignore"/>
+		<duration value=".1"/>
+			<effect_group name="Secondary Action">
+				<requirement name="!HoldingItemBroken"/>
+				<requirement name="onSelfSecondaryActionRayHit"/>
+				<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar="gupUseWater" operation="set" value="1">
+ 				<triggered_effect trigger="onSelfSecondaryActionRayMiss" action="ModifyCVar" cvar="gupUseWater" operation="set" value="20"/>
+					<requirement name="onSelfSecondaryActionRayMiss"/>
+				</triggered_effect>
+			</effect_group>
+			<effect_group name="Start Next Buff">
+				<requirement name="!HoldingItemBroken"/>
+				<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="buffSetSecondaryCvarStage2"/>
+			</effect_group>
+<!--  			<effect_group>
+				<triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="guppyBucketWaterInside" />    
+				<triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="guppyBucketWaterInside" />
+			</effect_group> -->
+	</buff>		
+	
+	<buff name="buffSetSecondaryCvarStage2" name_key="a" description_key="d" tooltip_key="f">
+		<stack_type value="ignore"/>
+		<duration value=".1"/>	
+			<effect_group>
+				<requirement name="!IsFPV"/>	
+				<requirement name="CVarCompare" cvar="gupUseWater" operation="LT" value="10"/>
+				<!--<triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/gupBucketWater.unity3d?guppyBucketWaterInside.prefab" parent_transform="LeftHand" local_offset="-0.15,.2,-.2" local_rotation="0,25,180"/>	-->
+			</effect_group>
+
+	</buff>
+	
+	<buff name="buffWaterSpray" name_key="a" description_key="d" tooltip_key="f">
+		<stack_type value="ignore"/>
+		<duration value="5"/>
+		<effect_group>
+			<passive_effect name="DisableItem" operation="base_set" value="1" tags="guppyBucket" />
+             <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/guppyBucketSpray.unity3d?gupBucketSpray3rd.prefab" parent_transform="LeftHand" local_offset="0,0,0" local_rotation="0,0,0">
+				<requirement name="!IsFPV"/>
+				<requirement name="!HoldingItemBroken"/>
+			 </triggered_effect>
+             <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/guppyBucketSpray.unity3d?gupBucketSpray.prefab" parent_transform="CameraNode" local_offset="-.30,-.20,-.5" local_rotation="25,-10,0">
+				<requirement name="IsFPV"/>
+				<requirement name="!HoldingItemBroken"/>
+			 </triggered_effect>
+             <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/guppyBucketSpray.unity3d?guppyBucketWaterInside.prefab" parent_transform="LeftHand" local_offset="0,0,0" local_rotation="0,0,0">
+				<requirement name="!IsFPV"/>
+				<requirement name="!HoldingItemBroken"/>
+			 </triggered_effect>			 
+			 <triggered_effect trigger="onSelfBuffStart" action="RemoveFire, SCore" target="positionAOE" range="5"/>
+			 <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="gupUseWater" operation="set" value="20"/> <!-- **************** Check different triggers -->
+             <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupBucketSpray3rd" />    
+             <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupBucketSpray3rd" />
+             <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupBucketSpray" />    
+             <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupBucketSpray" />			 
+             <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="guppyBucketWaterInside" />
+             <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="guppyBucketWaterInside" />
+		</effect_group>
+		<effect_group>
+			<passive_effect name="DisableItem" operation="base_set" value="1" tags="guppyBucket" />
+		</effect_group>		
+	</buff>  	
+	
+</append>
+
+
+		<item name="guppyWaterBucket">
+			<property name="Tags" value="guppyBucket"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="HoldType" value="18"/>
+			<property name="Meshfile" value="#@modfolder:Resources/guppyEmpty.unity3d?gupEmpty.prefab"/>
+			<property name="Material" value="Mstone"/>
+			<property name="RepairTools" value="drinkJarRiverWater"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="SoundJammed" value="ItemNeedsRepair"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="EconomicValue" value="175"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="ShowQuality" value="true"/>
+			<property name="CustomIcon" value="guppyWaterBucket"/>
+ 			<property class="Action0">
+				<property name="Class" value="DynamicMelee"/>
+				<property name="Sphere" value=".15"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="ExchangeItem"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Change_item_to" value="guppyWaterBucket"/>
+				<property name="Do_block_action" value="deplete1"/>
+				<property name="Focused_blockname_1" value="water"/>
+				<property name="Focused_blockname_2" value="waterMoving"/>
+				<property name="Focused_blockname_3" value="waterStaticBucket"/>
+				<property name="Focused_blockname_4" value="waterMovingBucket"/>
+				<property name="Focused_blockname_5" value="terrWaterPOI"/>
+				<property name="Sound_start" value="bucketfill_water"/>
+			</property>
+			<effect_group name="meleeInfo">
+				<passive_effect name="BlockDamage" operation="base_set" value="0"/>
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="45"/>
+				<passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
+				<passive_effect name="DegradationMax" operation="base_set" value="1,1" tier="1,6" tags="guppyBucket"/>
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="guppyBucket"/>
+				<passive_effect name="MaxRange" operation="base_set" value="6"/>
+				<passive_effect name="BlockRange" operation="base_set" value="6" />
+				<passive_effect name="BlockDamage" operation="perc_add" value="0,0" tier="1,6" tags="guppyBucket"/>				
+			</effect_group>
+			<effect_group name="Attach Bucket">
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/gupBucketWater.unity3d?guppyBucketWaterNew.prefab" parent_transform="LeftHand" local_offset="-0.15,.2,-.2" local_rotation="0,25,180">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/gupBucketWater.unity3d?guppyBucketWaterNew.prefab" parent_transform="LeftHand" local_offset="-0.15,.2,-.2" local_rotation="0,25,180">
+					<requirement name="IsFPV"/>
+				</triggered_effect>	
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/gupBucketWater.unity3d?guppyBucketWaterInside.prefab" parent_transform="LeftHand" local_offset="-0.15,.2,-.2" local_rotation="0,25,180">
+					<requirement name="IsFPV"/>
+				</triggered_effect>					
+				<triggered_effect trigger="onSelfEquipStart" action="AttachPrefabToEntity" prefab="#@modfolder:Resources/gupBucketWater.unity3d?guppyBucketWaterInside.prefab" parent_transform="LeftHand" local_offset="-0.15,.2,-.2" local_rotation="0,25,180">
+					<requirement name="!IsFPV"/>
+				</triggered_effect>				
+			</effect_group>
+			<effect_group name="Remove Inside Water">
+				<triggered_effect trigger="onSelfEquipStart" action="RemovePrefabFromEntity" prefab="guppyBucketWaterInside">
+					<requirement name="CVarCompare" cvar="gupUseWater" operation="GT" value="10"/>
+				</triggered_effect>					
+			</effect_group>				
+			<effect_group name="Set Hit Cvar">
+				<triggered_effect trigger="onSelfDamagedBlock" action="ModifyCVar" cvar="gupUseWater" operation="set" value="1"/>
+			</effect_group>
+			<effect_group name="Start Action">
+				<requirement name="CVarCompare" cvar="gupUseWater" operation="LT" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffWaterSpray"/>
+			</effect_group>
+			<effect_group name="End Action">
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePrefabFromEntity" prefab="guppyBucketWaterNew"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemovePrefabFromEntity" prefab="guppyBucketWaterInside"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemoveBuff" buff="buffWaterSpray"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="gupBucketSpray" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="guppyBucketWaterNew">	
+					<requirement name="IsFPV"/>
+				</triggered_effect>				
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="RemovePrefabFromEntity" prefab="guppyBucketWaterInside">	
+					<requirement name="IsFPV"/>
+				</triggered_effect>					
+			</effect_group>
+			<effect_group name="Secondary Action">
+					<triggered_effect trigger="onSelfSecondaryActionStart" action="AddBuff" buff="buffSetSecondaryCvar"/>
+					<triggered_effect trigger="onSelfSecondaryActionStart" action="ModifyCVar" cvar="gupUseWater" operation="set" value="1"/>
+					<!--<triggered_effect trigger="onSelfSecondaryActionStart" action="RemovePrefabFromEntity" prefab="guppyBucketWaterInside" /> -->
+			</effect_group>
+			<property name="Group" value="Tools/Traps"/>
+			<property name="PickupJournalEntry" value="miningTip"/>
+			<property name="RepairExpMultiplier" value="5.5"/>			
+		</item>		
+
+		<item name="dummyGupLightning">
+			<property name="Meshfile" value="#@modfolder:Resources/guppyLightningEntity.unity3d?guppyLightning.prefab"/>
+			<property name="Material" value="Mcloth"/>
+		</item>
+		
+		<item name="dummyGupFirenado">
+			<property name="Meshfile" value="#@modfolder:Resources/guppyFirenadoEntity.unity3d?guppyFireNadoNew.prefab"/>
+			<property name="Material" value="Mcloth"/>
+		</item>	

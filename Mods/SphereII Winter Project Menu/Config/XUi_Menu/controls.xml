@@ -1,0 +1,52 @@
+<configs>
+  <append xpath="/controls">
+    <winterProjectButton depth="3"
+                         pos="0,0"
+                         width="200"
+                         height="32"
+                         pivot="left"
+                         caption=""
+                         caption_key=""
+                         enabled_font_color="[labelColor]"
+                         disabled_font_color="[disabledLabelColor]"
+                         tooltip_key=""
+                         visible="true"
+                         enabled="true"
+                         sound="[default_click]">
+      <rect name="${name}"
+            pos="${pos}"
+            width="${width}"
+            height="${height}"
+            font_size_default="${height-16}"
+            font_size_hover="${height-8}"
+            enabled_font_color="[darkGrey]"
+            disabled_font_color="${disabled_font_color}"
+            controller="SimpleButton"
+            visible="${visible}">
+        <texture name="SMXmmButton1"
+                 depth="1"
+                 pos="10,-26"
+                 size="253,75"
+                 texture="@modfolder:Textures/menu/smx_winterp_hdr.png"
+                 pivot="${pivot}"/>
+        <button name="clickable"
+                pos="0,${Round(-height/2,0)}"
+                sprite=""
+                type="sliced"
+                hoverscale="1.0"
+                tooltip_key="${tooltip_key}"
+                pivot="${pivot}"/>
+        <label name="btnLabel"
+               depth="2"
+               pos="10,${Round(-height/2,0)}"
+               width="${width-20}"
+               text="${caption}"
+               text_key="${caption_key}"
+               font_size="${height-16}"
+               effect="outline"
+               justify="center"
+               pivot="${pivot}"/>
+      </rect>
+    </winterProjectButton>
+  </append>
+</configs>

@@ -1,0 +1,9 @@
+<configs>
+  
+	<append xpath="/entitygroups">
+	  <entitygroup name="SamaraMorgan">
+		<entity name="Samara" />
+	  </entitygroup>
+	</append>
+  
+</configs>

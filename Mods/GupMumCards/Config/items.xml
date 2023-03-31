@@ -1,0 +1,455 @@
+<configs>
+	<append xpath="/items">
+		
+		<item name="mumGupCardsGuppycur">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard01Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard01Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard01Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsGuppycur"/>	
+			<property name="DescriptionKey" value="gupMumCards01Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard01" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards01Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards01"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards01"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards01"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsSphereii">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard02Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard02Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard02Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsSphereii"/>	
+			<property name="DescriptionKey" value="gupMumCards02Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard02" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards02Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards02"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards02"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards02"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsXyth">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard03Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard03Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard03Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsXyth"/>	
+			<property name="DescriptionKey" value="gupMumCards03Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard03" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards03Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards03"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards03"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards03"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsMumpfy">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard04Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard04Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard04Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsMumpfy"/>	
+			<property name="DescriptionKey" value="gupMumCards04Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard04" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards04Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards04"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards04"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards04"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsV">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard05Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard05Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard05Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsV"/>	
+			<property name="DescriptionKey" value="gupMumCards05Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard05" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards05Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards05"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards05"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards05"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsStompyNZ">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard06Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard06Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard06Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsStompyNZ"/>	
+			<property name="DescriptionKey" value="gupMumCards06Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard06" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards06Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards06"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards06"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards06"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsGameCard">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard07Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard07Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard07Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsGameCard"/>	
+			<property name="DescriptionKey" value="gupMumCards07Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard07" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards07Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards07"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards07"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards07"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsGambonian">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard08Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard08Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard08Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsGambonian"/>	
+			<property name="DescriptionKey" value="gupMumCards08Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard08" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards08Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards08"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards08"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards08"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsDoombringer101">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard09Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard09Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard09Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsDoombringer101"/>	
+			<property name="DescriptionKey" value="gupMumCards09Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard09" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards09Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards09"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards09"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards09"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsChubbyWanKenobi">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard10Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard10Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard10Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsChubbyWanKenobi"/>	
+			<property name="DescriptionKey" value="gupMumCards10Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard10" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards10Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards10"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards10"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards10"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsAnabella">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard11Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard11Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard11Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsAnabella"/>	
+			<property name="DescriptionKey" value="gupMumCards11Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard11" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards11Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards11"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards11"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards11"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsAlloc">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard12Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard12Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard12Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsAlloc"/>	
+			<property name="DescriptionKey" value="gupMumCards12Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard12" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards12Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards12"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards12"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards12"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsTSBX">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard13Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard13Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard13Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsTSBX"/>	
+			<property name="DescriptionKey" value="gupMumCards13Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard13" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards13Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards13"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards13"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards13"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsDiscordServer">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard14Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard14Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard14Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsDiscordServer"/>	
+			<property name="DescriptionKey" value="gupMumCards14Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard14" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards14Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards14"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards14"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards14"/>	
+			</effect_group>	
+		</item>	
+		<item name="mumGupCardsGoldenCard">
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="clothing"/>			
+			<property name="Meshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard15Hand.prefab"/>
+			<property name="DropMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard15Hand.prefab"/>
+			<property name="HandMeshfile" value="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard15Hand.prefab"/>
+			<property name="Material" value="Mpaper"/>
+			<property name="Weight" value="5"/>
+			<property name="EconomicValue" value="600"/>
+			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="mumGupCardsGoldenCard"/>	
+			<property name="DescriptionKey" value="gupMumCards15Desc"/>			
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="0"/>
+				<property name="Use_time" value="0"/>
+				<property name="Sound_start" value="open_cardboard"/>
+			</property>
+			
+			<effect_group tiered="false" name="Add to Collection">
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="hasmumGupCard15" operation="set" value="1"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="AddBuff" buff="buffGupMumCards15Fly"/>
+				<triggered_effect trigger="onSelfPrimaryActionStart" action="RemoveBuff" buff="buffGupMumCards15"/>
+			</effect_group>			
+	
+			<effect_group tiered="false" name="Show Card">
+				<triggered_effect trigger="onSelfEquipStart" action="AddBuff" buff="buffGupMumCards15"/>
+				<triggered_effect trigger="onSelfEquipStop" action="RemoveBuff" buff="buffGupMumCards15"/>	
+			</effect_group>	
+		</item>			
+	</append>
+</configs>

@@ -1,0 +1,6 @@
+Key,Source,Context,Changes,English
+guppyCuckooClock,blocks,Block,,Cuckoo Clock
+guppyCuckooClockZombie,blocks,Block,,Cuckoo Clock Zombie Edition
+guppyDigitalClock,blocks,Block,,Digital Clock
+guppyWorkingClock,blocks,Block,,Wall Clock
+modGuppyWatch,item_modifiers,mod,New,Clock Helmet Modifier,,,,,

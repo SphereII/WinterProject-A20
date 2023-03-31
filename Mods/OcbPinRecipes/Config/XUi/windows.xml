@@ -1,0 +1,5 @@
+<configs patcher-version="1">
+
+	<include path="windows.a20.xml"/>
+
+</configs>

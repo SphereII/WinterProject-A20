@@ -1,0 +1,447 @@
+<configs>
+  <append xpath="/buffs">
+      <buff name="buffGupMumCards01" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard01" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard01" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard01" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards01Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard01Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard01Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard01Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards02" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard02" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard02" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard02" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards02Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard02Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard02Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard02Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards03" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard03" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard03" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard03" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards03Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard03Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard03Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard03Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards04" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard04" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard04" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard04" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards04Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard04Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard04Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard04Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards05" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard05" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard05" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard05" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards05Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard05Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard05Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard05Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards06" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard06" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard06" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard06" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards06Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard06Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard06Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard06Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards07" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard07" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard07" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard07" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards07Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard07Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard07Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard07Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards08" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard08" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard08" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard08" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards08Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard08Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard08Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard08Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards09" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard09" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard09" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard09" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards09Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard09Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard09Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard09Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards10" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard10" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard10" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard10" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards10Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard10Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard10Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard10Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards11" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard11" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard11" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard11" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards11Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard11Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard11Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard11Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards12" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard12" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard12" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard12" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards12Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard12Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard12Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard12Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards13" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard13" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard13" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard13" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards13Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard13Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard13Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard13Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards14" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard14" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard14" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard14" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards14Fly" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard14Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard14Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard14Animation" />  
+          </effect_group>
+      </buff>
+      <buff name="buffGupMumCards15" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard15" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard15" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard15" />  
+          </effect_group>
+      </buff>
+	  
+      <buff name="buffGupMumCards15Fly" name_key="gupMumCards_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+          <effect_group>
+              <requirement name="EntityTagCompare" tags="player"/>
+              <triggered_effect trigger="onSelfBuffStart" action="AttachPrefabToEntity" part="Mesh" prefab="#@modfolder:Resources/mumCardSet.unity3d?gupMumCard15Animation" parent_transform="CameraNode" local_offset="0,0,-2" local_rotation="0,0,0"/>
+              <triggered_effect trigger="onSelfBuffFinish" action="RemovePrefabFromEntity" prefab="gupMumCard15Animation" />    
+              <triggered_effect trigger="onSelfBuffRemove" action="RemovePrefabFromEntity" prefab="gupMumCard15Animation" />  
+          </effect_group>
+      </buff>	  
+
+      <buff name="buffCardCollector" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <update_rate value="1"/>      
+		<effect_group tiered="false">
+			<passive_effect name="PerkLevel" tags="perkCardCollector" operation="base_set" value="1">
+				<requirement name="CVarCompare" cvar="hasmumGupCard01" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard02" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard03" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard04" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard05" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard06" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard07" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard08" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard09" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard10" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard11" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard12" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard13" operation="Equals" value="1"/>
+				<requirement name="CVarCompare" cvar="hasmumGupCard14" operation="Equals" value="1"/>				
+				<requirement name="CVarCompare" cvar="hasmumGupCard15" operation="Equals" value="1"/>					
+			</passive_effect>
+			<passive_effect name="AttributeLevel" operation="base_add" value="1" tags="attIntellect"/>
+		</effect_group>
+      </buff>	
+
+      <buff name="buffRemoveCardCollector" name_key="gupMumCards01_name" description_key="gupMumCards01_desc">
+        <stack_type value="ignore"/>
+        <duration value="3"/>
+        <update_rate value="1"/>      
+		<effect_group tiered="false">
+			<passive_effect name="PerkLevel" tags="perkCardCollector" operation="base_set" value="0"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffCardCollector">
+				<requirement name="HasBuff" buff="buffCardCollector"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard01" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard02" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard03" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard04" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard05" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard06" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard07" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard08" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard09" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard10" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard11" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard12" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard13" operation="set" value="2"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard14" operation="set" value="2"/>				
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="hasmumGupCard15" operation="set" value="2"/>	
+		</effect_group>
+      </buff>	 
+	
+  </append>
+  
+  <append xpath="/buffs/buff[@name='buffStatusCheck02']">
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffCardCollector">
+					<requirement name="!HasBuff" buff="buffRemoveCardCollector"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard01" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard02" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard03" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard04" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard05" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard06" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard07" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard08" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard09" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard10" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard11" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard12" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard13" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard14" operation="Equals" value="1"/>	
+					<requirement name="CVarCompare" cvar="hasmumGupCard15" operation="Equals" value="1"/>
+				</triggered_effect>
+			</effect_group>
+			
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" buff="buffRemoveCardCollector">
+					<requirement name="PlayerItemCount" item_name="guppyCardFrame" operation="GTE" value="1"/>
+					<requirement name="!HasBuff" buff="buffRemoveCardCollector"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard01" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard02" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard03" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard04" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard05" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard06" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard07" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard08" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard09" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard10" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard11" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard12" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard13" operation="Equals" value="1"/>
+					<requirement name="CVarCompare" cvar="hasmumGupCard14" operation="Equals" value="1"/>					
+					<requirement name="CVarCompare" cvar="hasmumGupCard15" operation="Equals" value="1"/>	
+				</triggered_effect>
+			</effect_group>			
+  </append>
+</configs>

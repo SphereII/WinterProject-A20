@@ -1,0 +1,11 @@
+<configs>
+	<append xpath="/progression/perks">
+
+		<perk name="perkCardCollector" parent="skillIntellectCraftsmanship" max_level="1" base_skill_point_cost="0" name_key="perkCardCollectorName" desc_key="perkCardCollectorDesc" icon="ui_game_symbol_map_cursor">
+			<effect_group>
+				<passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="guppyCardFrame"/>
+			</effect_group>
+		</perk>
+		
+	</append>
+</configs>

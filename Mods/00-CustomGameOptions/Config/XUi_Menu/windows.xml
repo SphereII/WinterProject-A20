@@ -1,0 +1,25 @@
+﻿<windows>
+	<!-- Game Options-->
+	<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsHeader']/grid[@name='tabButtons']/@cell_width">117</set>
+	<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsHeader']/grid[@name='tabButtons']/@cols">5</set>
+	<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsHeader']/grid[@name='tabButtons']/rect/simplebutton/@width">116</set>
+	<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsHeader']/grid[@name='tabButtons']/rect/simplebutton/@font_size">24</set>
+	<set xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsHeader']/grid[@name='tabButtons']/rect/sprite/@pos">115,0</set>
+
+	<insertAfter xpath="/windows/window[@name='newContinueGame']/rect[@name='tabs']/rect[@name='tabsContents']/rect[@tab_key='xuiGameSettingsMultiplayer']" >
+		<rect tab_key="xuiGameOptions">
+			<grid pos="6,-40" rows="13" cell_width="525" cell_height="45" repeat_content="false" arrangement="vertical" >
+
+				<gameoption name="CustomIntValue" title="goCustomIntValue" value_wrap="false" value_type="int" values="1,2,3,4,5" display_names="" value_localization_prefix="" default_value="2" />
+				<gameoption name="CustomIntInput" title="goCustomIntInput" value_wrap="false" value_type="int" values="" display_names="" value_localization_prefix="" is_textinput="true" default_value="67" />
+
+				<gameoption name="CustomBool" title="goCustomBool" value_wrap="false" value_type="bool" values="" display_names="" value_localization_prefix="" default_value="false" />
+				<gameoption name="CustomBoolDefaulted" title="goCustomBoolDefaulted" value_wrap="false" value_type="bool" values="" display_names="" value_localization_prefix="" default_value="true" />
+
+				<gameoption name="CustomStringValue" title="goCustomStringValue" value_wrap="false" value_type="string" values="A,B,C,D,E" display_names="" value_localization_prefix="" default_value="E" />
+				<gameoption name="CustomStringInput" title="goCustomStringInput" value_wrap="false" value_type="string" values="" display_names="" value_localization_prefix="" is_textinput="true" default_value="" />
+			</grid>
+		</rect>
+	</insertAfter>
+
+</windows>

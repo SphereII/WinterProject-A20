@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<xml>
+		<ModInfo>
+			<Name value="AGF-HUDPlus-EnhancedPatch"/>
+			<Description value="Adds extra info that is only available from non-EAC/Server friendly places"/>
+			<Author value="AuroraGiggleFairy (AGF)"/> <!--Name changed from RilesPlus-->
+			<Version value="1.0.1"/>
+			<Website value=""/>
+		</ModInfo>
+	</xml>

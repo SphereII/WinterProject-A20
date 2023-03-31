@@ -1,0 +1,57 @@
+<configs>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupSafeBooks']">
+		<item name="mumGupCardsGuppycur" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsSphereii" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsXyth" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsMumpfy" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsV" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsStompyNZ" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsGameCard" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsGambonian" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsDoombringer101" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsChubbyWanKenobi" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsAnabella" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsAlloc" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsTSBX" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsDiscordServer" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsGoldenCard" loot_prob_template="veryLow" force_prob="true"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupSmallSafeLoot01']">
+		<item name="mumGupCardsGuppycur" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsSphereii" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsXyth" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsMumpfy" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsV" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsStompyNZ" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsGameCard" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsGambonian" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsDoombringer101" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsChubbyWanKenobi" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsAnabella" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsAlloc" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsTSBX" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsDiscordServer" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsGoldenCard" loot_prob_template="veryLow" force_prob="true"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupSmallSafeLoot03']">
+		<item name="mumGupCardsGuppycur" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsSphereii" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsXyth" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsMumpfy" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsV" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsStompyNZ" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsGameCard" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsGambonian" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsDoombringer101" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsChubbyWanKenobi" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsAnabella" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsAlloc" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsTSBX" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsDiscordServer" loot_prob_template="veryLow" force_prob="true"/>
+		<item name="mumGupCardsGoldenCard" loot_prob_template="veryLow" force_prob="true"/>
+	</append>
+
+</configs>

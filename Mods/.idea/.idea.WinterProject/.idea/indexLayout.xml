@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="UserContentModel">
+    <attachedFolders>
+      <Path>Samara</Path>
+      <Path>SphereII Music Boxes</Path>
+      <Path>SphereII Winter Project Menu</Path>
+      <Path>WinterSkins</Path>
+      <Path>ZombiePinups</Path>
+      <Path>gupFireMod</Path>
+      <Path>winter zeds blue</Path>
+      <Path>winter zeds white</Path>
+    </attachedFolders>
+    <explicitIncludes>
+      <Path>0-SCore</Path>
+      <Path>00-CustomGameOptions</Path>
+      <Path>SphereII Legacy Distant Terrain</Path>
+      <Path>SphereII PG13</Path>
+      <Path>SphereII Peace Of Mind</Path>
+      <Path>SphereII Skip Tutorial Quests</Path>
+      <Path>SphereII Take And Replace</Path>
+      <Path>SphereII Winter Project</Path>
+      <Path>SphereII Winter Project Menu</Path>
+    </explicitIncludes>
+    <explicitExcludes />
+  </component>
+</project>

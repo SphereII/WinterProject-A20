@@ -1,0 +1,67 @@
+<AGF-HUDPlus-EnhancedPatch>
+
+
+<remove xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@pos='76,-103']"/>
+<remove xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@pos='1,-64']"/>
+<remove xpath="/windows/window[@name='HUDLeftStatBars']/rect[@name='hud']/rect[@pos='76,-64']"/>
+
+		<append xpath="/windows/window[@name='HUDLeftStatBars']/rect[@pos='9,145']">
+					<!--OTHER: Zombie Kills, Player Deaths, and Player Lootstage-->
+						<!--REMOVABILITY = You may delete this section to remove this part of the display-->
+					<rect name="hud" pos="155,15" rows="1" cols="1" width="84" controller="PlayerStats, PlayerStatController" side="right">
+						<sprite depth="1" pos="0,0" height="76" width="84" color="0,0,0,250" type="sliced" foregroundlayer="true"/>					
+						<sprite depth="2" name="windowIcon" width="19" height="19" pos="5,-4" sprite="ui_game_symbol_marksmanship" color="[iconColor]" foregroundlayer="true" tooltip_key="xuiZombieKills"/>
+						<label depth="2" name="TextContent" pos="30,-6" width="80" height="18" text="[DECEA3]{PlayerZombieKills}" font_size="18"/>	
+						<sprite depth="2" name="windowIcon" width="19" height="19" pos="5,-29" sprite="ui_game_symbol_near_death_trauma" color="[iconColor]" foregroundlayer="true" tooltip_key="xuiDeaths"/>
+						<label depth="2" name="TextContent" pos="30,-31" width="80" height="18" text="[DECEA3]{PlayerDeaths}" font_size="18"/>
+						<sprite depth="2" name="windowIcon" width="19" height="19" pos="5,-54" sprite="ui_game_symbol_shopping_cart" color="[iconColor]" foregroundlayer="true" tooltip_key="xuiLootstage"/>
+						<label depth="2" name="TextContent" pos="30,-56" width="80" height="18" text="[DECEA3]{PlayerLootStage}" font_size="18"/>
+					</rect>						
+						
+					<!--XP Bar, Now Circle-->
+					<rect pos="76,-103" width="75" height="75" cursor_area="true" xp_fill_speed="2" >
+						<sprite depth="8" height="77" width="77"  name="border" sprite="ui_game_filled_circle" color="[black]" pivot="center" globalopacity="false"/>			
+						<sprite depth="9" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+						<sprite depth="10" height="69" width="69"  name="border" sprite="ui_game_filled_circle" color="[black]" pivot="center" globalopacity="false"/>				
+						<sprite depth="11" height="69" width="69" name="background" sprite="ui_game_filled_circle" color="{xpcolor}" pivot="center" globalopacity="false" type="filled" fill="{xp}" filldirection="radial360" controller="ToolbeltWindow"/>
+						<sprite depth="12" width="55" height="55" name="center" sprite="ui_game_filled_circle" color="115,115,115" pivot="center" globalopacity="false"/>
+						<label depth="15" pos="0,10" name="LevelNumber" width="45" height="42" pivot="center" justify="center" text="{cvar($LastPlayerLevel)}" font_size="22" controller="HUDStatBar" tooltip_key="xuiPlayerLevel"/>
+						<label depth="15" pos="0,-12" name="XPtoNextLVL" width="45" height="42" pivot="center" justify="center" text="[DECEA3]{PlayerXPToNextLevel}" font_size="15"  controller="PlayerStats, PlayerStatController" tooltip_key="xuiXPToNextLevel"/>					
+					</rect>
+												
+					<!--Food Bar-->			
+					<rect pos="1,-64" width="75" height="77"  controller="HUDStatBar" stat_type="Food" visible="{statvisible}">
+						<sprite depth="1" name="border" color="0,0,0,235" type="sliced" />									
+						<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />
+						<filledsprite depth="3" name="background" color="110,110,110,128" width="75" type="filled" fill="{statmodifiedmax}" />
+						<filledsprite depth="5" name="BarContent" color="0,150,54,180" width="75" type="filled" fill="0" filldirection="vertical" />
+						<sprite depth="7" name="Icon" atlas="{staticonatlas|once}" sprite="ui_game_symbol_fork" size="20,20" pos="10,-30" foregroundlayer="true"/>
+						<label depth="7" name="TextContent" pos="-2,-58" font_size="20" color="[white]" text="{PlayerFoodCurrent}" controller="PlayerStats, PlayerStatController" height="34" width="42" justify="center"  tooltip_key="xuiFoodAmount"/>
+						<label depth="7" name="TextContent" pos="0,-2" font_size="18" color="[white]" text="{statcurrent}%" height="34" width="42" justify="center" tooltip_key="xuiFoodPercentage" />
+						<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
+						<filledsprite depth="8" name="background" color="0,0,0,255" width="75" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
+						<filledsprite depth="3" name="background" color="0,0,0,255" width="75" fillcenter="false" type="filled" fill="{statmodifiedmax}"/>
+					</rect>
+							
+					<!--Water Bar-->	
+					<rect pos="76,-64" width="75" height="77" controller="HUDStatBar" stat_type="Water" visible="{statvisible}">
+						<sprite depth="1" name="border" color="0,0,0,235" type="sliced"/>
+						<sprite depth="2" name="background" color="0,0,0,140" type="sliced" />									
+						<filledsprite depth="3" name="background" color="110,110,110,128" width="75" type="filled" fill="{statmodifiedmax}"/>
+						<filledsprite depth="5" name="BarContent" color="0,200,255,180" width="75" type="filled" fill="0" filldirection="vertical" globalopacity="false"/>
+						<sprite depth="7" name="Icon" atlas="{staticonatlas|once}" sprite="ui_game_symbol_water" size="22,22" pos="46,-28" foregroundlayer="true"/>
+						<label depth="7" name="TextContent" pos="36,-58" font_size="20" color="[white]" text="{PlayerWaterCurrent}" controller="PlayerStats, PlayerStatController" height="34" width="42" justify="center" tooltip_key="xuiWaterAmount"/>
+						<label depth="7" name="TextContent" pos="34,-2" font_size="18" color="[white]" text="{statcurrent}%"  height="34" width="42" justify="center" tooltip_key="xuiWaterPercentage"/>
+						<sprite depth="8" name="border" color="0,0,0,255" type="sliced" fillcenter="false"/>
+						<filledsprite depth="8" name="background" color="0,0,0,255" width="75" fillcenter="false" type="filled" fill="{statmodifiedmax}" />
+						<filledsprite depth="3" name="background" color="0,0,0,255" width="75" fillcenter="false" type="filled" fill="{statmodifiedmax}"  />
+					</rect>	
+		</append>
+	
+
+</AGF-HUDPlus-EnhancedPatch>
+
+
+
+
+

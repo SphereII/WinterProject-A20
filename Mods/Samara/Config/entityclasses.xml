@@ -1,0 +1,42 @@
+<configs>
+	<append xpath="/entity_classes">
+		<entity_class name="Samara" extends="zombieTemplateMale">
+			<property name="Mesh" value="#@modfolder:Resources/Samara.unity3d?Samara_X" />			
+			<property name="IsEnemyEntity" value="true"/>
+			<property name="RootMotion" value="false" />
+			<property name="HasRagdoll" value="true" />
+			<property name="AvatarController" value="MecanimSDX, SCore" />
+			<property name="HandItem" value="handSamara"/> 
+			<property name="RightHandJointName" value="Muzzle" />
+			  <property name="Buffs" value="buffSamaraAOE"/>
+			  <property name="MoveSpeed" value="0.25"/> 
+			<property name="MoveSpeedAggro" value=".8, 1.1"/> 
+			<property name="MoveSpeedPanic" value="1.1"/>
+			<property name="AttackTimeoutDay" value="3.0"/> 
+			<property name="AttackTimeoutNight" value="3.0"/>
+			<property name="PainResistPerHit" value=".85"/>
+			<property name="CanClimbLadders" value="true"/>
+			<property name="CanClimbVertical" value="true"/>
+			  <property name="AITask-1" value="ApproachAndAttackSDX, SCore" data="incentives=Leader,Death=true"/>
+			  <property name="AITask-2" value="Look"/>
+			  <property name="AITask-3" value="" />
+			  <property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0"/>
+			  <property name="AITarget-2" value=""/>
+			<property name="RandomIndexes" value="2" /> 
+			<property name="SoundRandom" value="Enemies/Base_Zombie_Female/zombiefemaleroam"/>
+			<property name="SoundAlert" value="Enemies/Base_Zombie_Female/zombiefemalealert"/>
+			<property name="SoundAttack" value="Enemies/Base_Zombie_Female/zombiefemaleattack"/>
+			<property name="SoundHurt" value="Enemies/Base_Zombie_Female/zombiefemalepain"/>
+			<property name="SoundDeath" value="Enemies/Base_Zombie_Female/zombiefemaledeath"/>
+			<property name="SoundSense" value="Enemies/Base_Zombie_Female/zombiefemalesense"/>		
+			<property name="HasDeathAnim" value="true"/>
+			<property name="ExperienceGain" value="1550"/> 
+			<property name="DeadBodyHitPoints" value="1000"/>
+			<property name="TimeStayAfterDeath" value="5"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="100000"/>
+				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+			</effect_group>
+		</entity_class> 
+	</append>
+</configs>

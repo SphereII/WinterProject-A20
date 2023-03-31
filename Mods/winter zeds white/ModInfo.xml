@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <ModInfo>
+    <Name value="winter zeds white" />
+    <Description value="Texture Variants" />
+    <Author value="Mumpfy/xyth/sphereii" />
+    <Version value="19.2.1.1" />
+    <Website value="" />
+  </ModInfo>
+  <DMT Hash="e7edcf47a4caeeb52092cd5cca267294">
+    <dependencies />
+    <conflicts />
+  </DMT>
+</xml>

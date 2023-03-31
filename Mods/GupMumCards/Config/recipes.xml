@@ -1,0 +1,28 @@
+<configs>
+	<append xpath="/recipes">
+
+		<recipe name="gupEmptyFrame" count="1">
+			<ingredient name="paintingBen" count="1"/>
+		</recipe>
+		<recipe name="gupEmptyFrame" count="1">
+			<ingredient name="paintingLorien" count="1"/>
+		</recipe>
+		<recipe name="gupEmptyFrame" count="1">
+			<ingredient name="paintingDerek" count="1"/>
+		</recipe>
+		<recipe name="gupEmptyFrame" count="1">
+			<ingredient name="paintingNoah" count="1"/>
+		</recipe>
+		<recipe name="gupEmptyFrame" count="1">
+			<ingredient name="paintingDuke" count="1"/>
+		</recipe>
+		<recipe name="gupEmptyFrame" count="1">
+			<ingredient name="paintingKen" count="1"/>
+		</recipe>		
+		
+		<recipe name="guppyCardFrame" count="1" tags="learnable,perkCardCollector"> <!--fIND A WAY TO REMOVE BUFFCARDCOLLECTOR WHEN THIS IS USED -->
+			<ingredient name="gupEmptyFrame" count="1"/>
+		</recipe>				
+
+	</append>
+</configs>

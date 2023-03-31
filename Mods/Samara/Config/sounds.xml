@@ -1,0 +1,84 @@
+<configs>
+
+  <!-- Apply these random buffs to the close of workstation, or other places deemed 'safe' to display overlays and cutscenes -->
+  <append xpath="/Sounds/SoundDataNode[@name='campfire_close']">
+    <buff value="buffCursedSamaraRandomEffect" />
+  </append>
+  <append xpath="/Sounds/SoundDataNode[@name='chem_station_close']">
+    <buff value="buffCursedSamaraRandomEffect" />
+  </append>
+  <append xpath="/Sounds/SoundDataNode[@name='forge_close']">
+    <buff value="buffCursedSamaraRandomEffect" />
+  </append>
+  <append xpath="/Sounds/SoundDataNode[@name='traderdislikegreeting']">
+    <buff value="buffCursedSamaraRandomEffect" />
+  </append>
+
+  <!-- Let's dish out some bad karma -->
+  <append xpath="/Sounds/SoundDataNode[@name='rabbitdeath']">
+    <buff value="buffBadKarma" />
+  </append>
+  <append xpath="/Sounds/SoundDataNode[@name='chickendeath']">
+    <buff value="buffBadKarma" />
+  </append>
+
+
+  <!--  If the video clip you want to show doesnt have embedded sound, or you want that sound to play inside the player head, you can call a .unity3d sound prefab using a sound node instead.    -->
+
+  <append xpath="/Sounds">
+
+    <SoundDataNode name="buffSamaraScream">
+      <AudioSource name="Sounds/AudioSource_Notifications"/>
+      <AudioClip ClipName="#@modfolder:Resources/SamaraCurse.unity3d?scream" Loop="true" />
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value="0.01"/>
+    </SoundDataNode>
+
+    <!-- Samara Morgan's Diary opening -->
+    <SoundDataNode name="buffSamaraHum">
+      <Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+      <AudioSource name="Sounds/AudioSource_Notifications"/>
+      <AudioClip ClipName="#@modfolder:Resources/SamaraCurse.unity3d?humm" Loop="false" />
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value="60"/>
+    </SoundDataNode>
+    <SoundDataNode name="buffBedHum">
+      <Noise ID="3" noise="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+      <AudioSource name="Sounds/AudioSource_Notifications"/>
+      <AudioClip ClipName="#@modfolder:Resources/SamaraCurse.unity3d?humm" Loop="false" />
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value="3"/>
+    </SoundDataNode>
+    <SoundDataNode name="buffScaryScream">
+      <AudioSource name="Sounds/AudioSource_Notifications"/>
+      <AudioClip ClipName="#@modfolder:Resources/SamaraCurse.unity3d?scaryscream" Loop="false" />
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value="60"/>
+    </SoundDataNode>
+    <SoundDataNode name="buffCutscene00">
+      <AudioSource name="Sounds/AudioSource_Notifications"/>
+      <AudioClip ClipName="#@modfolder:Resources/SamaraCurse.unity3d?cutscene00sound" Loop="false" />
+      <LocalCrouchVolumeScale value="1.0"/>
+      <CrouchNoiseScale value="0.5"/>
+      <NoiseScale value="1"/>
+      <MaxVoices value="10"/>
+      <MaxRepeatRate value=".01"/>
+    </SoundDataNode>
+	</append>
+
+  <append xpath="/Sounds/SoundDataNode[@name='zombiefemalescoutalert']">
+    <buff value="buffCursed" />
+  </append>
+</configs>

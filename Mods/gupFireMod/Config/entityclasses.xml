@@ -1,0 +1,88 @@
+<configs>
+	<append xpath="/entity_classes">
+
+		<entity_class name="guppyLightning" extends="zombieSoldier">
+			<property name="Tags" value="entity,zombie,walker,boss"/>
+			<property name="Mesh" value="#@modfolder:Resources/guppyLightningEntity.unity3d?guppyLightningNew.prefab"/>
+			<!--<property name="Mesh" value="#@modfolder:Resources/guppyDevrixLightning.unity3d?lightningStrike_SorceryDevrix.prefab"/>-->
+			<property name="Class" value="EntityZombieCop"/>
+			<property name="Mass" value="300"/>
+			<property name="AITask-1" value="Look"/>
+			<property name="SoundRandom" value=""/>
+			<property name="SoundAlert" value=""/>
+			<property name="SoundAttack" value=""/>
+			<property name="SoundHurt" value=""/>
+			<property name="SoundDeath" value=""/>
+			<property name="SoundSense" value=""/>
+			<property name="SoundFootstepModifier" value=""/>
+			<passive_effect name="WalkSpeed" operation="base_set" value="0"/>
+			<passive_effect name="RunSpeed" operation="base_set" value="0"/>
+			<passive_effect name="CrouchSpeed" operation="base_set" value="0"/>
+			<passive_effect name="WalkSpeed" operation="base_set" value="0" tags="swimming"/>
+			<passive_effect name="RunSpeed" operation="base_set" value="0" tags="swimming"/>			
+			<property name="HandItem" value="meleeHandZombieDemolition"/>
+			<property name="JumpMaxDistance" value="0,0"/>
+			<property name="PainResistPerHit" value=".5"/>
+			<property name="Explosion.ParticleIndex" value="0"/>
+			<property name="Explosion.RadiusBlocks" value="2"/>
+			<property name="Explosion.BlockDamage" value="1"/>
+			<property name="StompsSpikes" value="true"/>
+			<property name="ExplodeDelay" value="3"/>
+			<property name="ExplodeHealthThreshold" value="500"/>
+			<property name="SoundExplodeWarn" value=""/>
+			<property name="SoundTick" value=""/>
+			<property name="LootDropProb" value="0"/>
+			<property name="ParticleOnDeath" value=""/>
+			<property name="Buffs" value="buffAttachLightningBolt"/>			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="100"/>
+			</effect_group>
+		</entity_class>	
+				
+		<entity_class name="guppyFireNado" extends="zombieTemplateMale">
+			<property name="Tags" value="firenado"/>
+			<property name="Mesh" value="#@modfolder:Resources/guppyFirenadoEntity.unity3d?guppyFireNadoNew.prefab"/>
+			<property name="Class" value="EntityZombie"/>
+			<property name="Mass" value="300"/>
+			<property name="AITask-1" value="Wander"/>
+			<property name="AITask-2" value="ApproachDistraction"/>
+			<property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityNPC,0,EntityEnemyAnimal,0,EntityPlayer,0"/>
+			<property name="AITask-4" value="BreakBlock"/>
+			<property name="AITask-5" value="RunawayWhenHurt"/>
+			<property name="AITask-6" value="Look"/>
+			<property name="AITask-7" value=""/>
+			<property name="AITask-8" value=""/>
+			<property name="SoundRandom" value=""/>
+			<property name="SoundAlert" value=""/>
+			<property name="SoundAttack" value=""/>
+			<property name="SoundHurt" value=""/>
+			<property name="SoundDeath" value=""/>
+			<property name="SoundSense" value=""/>
+			<property name="SoundFootstepModifier" value=""/>
+			<property name="HandItem" value="meleeHandZombie01"/>
+			<property name="JumpMaxDistance" value="0, 0"/>
+			<property name="PainResistPerHit" value=".5"/>
+			<property name="LootDropProb" value="0"/>
+			<property name="ParticleOnDeath" value=""/>
+			<property name="Buffs" value="buffDiein30Fire"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="33"/>
+				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+			</effect_group>
+		</entity_class>			
+
+	</append>
+	
+	<append xpath="/entity_classes/entity_class[@name='zombieBurnt']">
+		<property name="Buffs" value="buffGupQuickFireEffectOnly"/>
+	</append>
+	
+	<!--<append xpath="/entity_classes/entity_class[not(contains(@name, 'zombieBurnt'))]">
+		<property name="SpawnOnDeath" value="zombieBurnt" />
+	</append> -->
+	
+	<!--<set xpath="//entity_class[contains(@name, 'Forest') and not (contains(@name, 'Feral')) and not(contains(@name, 'Radiated')) and not (contains(@name, 'SuperRadiated'))]/property[@name='HandItem']/@value">meleeHandForestBoe</set> -->
+
+	<!--<remove xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='SpawnOnDeath']"/> -->
+	
+</configs>
