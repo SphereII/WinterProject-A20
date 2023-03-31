@@ -26,12 +26,12 @@ public static class WinterProjectPrefab
     public static void SetSnowPrefab(Prefab prefab, ChunkCluster cluster, Vector3i position, QuestTags _questTag)
     {
         var AlreadyFilled = false;
-        if (_questTag != QuestTags.none)
-        {
-            AlreadyFilled = true;
-            prefab.yOffset -= 8;
-            position.y -= 8;
-        }
+        // if (_questTag != QuestTags.none)
+        // {
+        //     AlreadyFilled = true;
+        //     prefab.yOffset -= 8;
+        //     position.y -= 8;
+        // }
 
         SetSnow(position.x, position.z, prefab.size.x, prefab.size.z, cluster, Rpc, Logging, AlreadyFilled, prefab.size.y);
     }

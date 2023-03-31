@@ -1,16 +1,16 @@
 ﻿<configs>
   
   <append xpath="/lootcontainers/lootgroup[@name='groupJunk']">
-    <item name="SamaraMorganHorse01" />
-    <item name="SamaraMorganHorse02" />
-    <item name="SamaraMorganHorse03" />
-    <item name="SamaraMorganHorse04" />
-    <item name="SamaraPostCard01" />
-    <item name="SamaraPostCard02" />
-    <item name="SamaraPostCard03" />
-    <item name="SamaraPostCard04" />
-    <item name="SamaraMemories01" />
-    <item name="SamaraMemories02" />
+    <item name="SamaraMorganHorse01" prob="0.01"/>
+    <item name="SamaraMorganHorse02" prob="0.01"/>
+    <item name="SamaraMorganHorse03" prob="0.01"/>
+    <item name="SamaraMorganHorse04" prob="0.01"/>
+    <item name="SamaraPostCard01" prob="0.01"/>
+    <item name="SamaraPostCard02" prob="0.01"/>
+    <item name="SamaraPostCard03" prob="0.01"/>
+    <item name="SamaraPostCard04" prob="0.01"/>
+    <item name="SamaraMemories01" prob="0.01"/>
+    <item name="SamaraMemories02" prob="0.01"/>
   </append>
 
   <append xpath="/lootcontainers">
