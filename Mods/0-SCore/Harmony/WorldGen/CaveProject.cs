@@ -56,7 +56,13 @@ namespace Harmony.WorldGen
                 if (!Configuration.CheckFeatureStatus(AdvFeatureClass, Feature))
                     return;
 
-                if (!GameUtils.IsPlaytesting()) SpawnUpdate(_spawnerName, _bSpawnEnemyEntities, _userData as ChunkAreaBiomeSpawnData, ref ___spawnNearList, ref ___lastClassId);
+
+                if (!GameUtils.IsPlaytesting())
+                {
+
+                    SpawnUpdate(_spawnerName, _bSpawnEnemyEntities, _userData as ChunkAreaBiomeSpawnData,
+                        ref ___spawnNearList, ref ___lastClassId);
+                }
             }
 
             private static bool isPositionMinDistanceAwayFromAllPlayers(Vector3 _position, int _minDistance)
@@ -71,60 +77,60 @@ namespace Harmony.WorldGen
 
             // This is a slightly modified version of the underground code from vanilla. The range of y is a bit throttled, as we want to spawn creatures near the player, and the original
             // underground code did not check if they were within the view spawn code, so you could see them spawn in front of you.
-            public static bool FindRandomSpawnPointNearPositionUnderground(Rect _area, int _minDistance, int _maxDistance, bool _bConsiderBedrolls, out Vector3 _position, Vector3i PlayerPosition)
-            {
-                _position = Vector3.zero;
-                if (GameManager.Instance.World.Players.list.Count == 0) return false;
-
-                // Since the cave system can be eratic in its location, we want to try 20 times to find a random spot where they can spawn at.
-                for (var i = 0; i < 40; i++)
-                {
-                    var rangeY = new Vector2(PlayerPosition.y - 10, PlayerPosition.y + 10);
-                    if (rangeY.x < 1)
-                        rangeY.x = 2;
-
-                    _position = new Vector3(_area.x + GameManager.Instance.World.RandomRange(0f, _area.width - 1f), GameManager.Instance.World.RandomRange(rangeY.x, rangeY.y),
-                        _area.y + GameManager.Instance.World.RandomRange(0f, _area.height - 1f));
-                    if (_position.y < 1)
-                        _position.y = 2;
-                    var vector3i = World.worldToBlockPos(_position);
-                    var chunk = (Chunk)GameManager.Instance.World.GetChunkFromWorldPos(vector3i);
-                    if (chunk == null) continue;
-
-                    var x = World.toBlockXZ(vector3i.x);
-                    var z = World.toBlockXZ(vector3i.z);
-
-                    // Grab the terrian height. If it's above the terrain level, ignore it.
-                    float terrainLevel = chunk.GetHeight(x, z) + 1;
-                    float maxLevel = PlayerPosition.y + 10;
-                    vector3i.y = (int)GameManager.Instance.World.RandomRange((float)PlayerPosition.y - 10, maxLevel);
-                    if (vector3i.y < 1)
-                        vector3i.y = PlayerPosition.y;
-
-                    if (maxLevel >= terrainLevel)
-                        vector3i.y = PlayerPosition.y;
-
-                    if (!chunk.CanMobsSpawnAtPos(x, vector3i.y, z)) continue;
-
-                    var flag = isPositionMinDistanceAwayFromAllPlayers(_position, _minDistance);
-                    var num = 0;
-                    while (flag && num < GameManager.Instance.World.Players.list.Count)
-                    {
-                        if ((_position - GameManager.Instance.World.Players.list[num].GetPosition()).sqrMagnitude < 2500f &&
-                            GameManager.Instance.World.Players.list[num].IsInViewCone(_position)) flag = false;
-                        num++;
-                    }
-
-                    if (!flag) continue;
-
-                    // Set the y position correctly.
-                    _position.y = vector3i.y;
-                    return true;
-                }
-
-                _position = Vector3.zero;
-                return false;
-            }
+            // public static bool FindRandomSpawnPointNearPositionUnderground(Rect _area, int _minDistance, int _maxDistance, bool _bConsiderBedrolls, out Vector3 _position, Vector3i PlayerPosition)
+            // {
+            //     _position = Vector3.zero;
+            //     if (GameManager.Instance.World.Players.list.Count == 0) return false;
+            //
+            //     // Since the cave system can be eratic in its location, we want to try 20 times to find a random spot where they can spawn at.
+            //     for (var i = 0; i < 40; i++)
+            //     {
+            //         var rangeY = new Vector2(PlayerPosition.y - 10, PlayerPosition.y + 10);
+            //         if (rangeY.x < 1)
+            //             rangeY.x = 2;
+            //
+            //         _position = new Vector3(_area.x + GameManager.Instance.World.RandomRange(0f, _area.width - 1f), GameManager.Instance.World.RandomRange(rangeY.x, rangeY.y),
+            //             _area.y + GameManager.Instance.World.RandomRange(0f, _area.height - 1f));
+            //         if (_position.y < 1)
+            //             _position.y = 2;
+            //         var vector3i = World.worldToBlockPos(_position);
+            //         var chunk = (Chunk)GameManager.Instance.World.GetChunkFromWorldPos(vector3i);
+            //         if (chunk == null) continue;
+            //
+            //         var x = World.toBlockXZ(vector3i.x);
+            //         var z = World.toBlockXZ(vector3i.z);
+            //
+            //         // Grab the terrian height. If it's above the terrain level, ignore it.
+            //         float terrainLevel = chunk.GetHeight(x, z) + 1;
+            //         float maxLevel = PlayerPosition.y + 10;
+            //         vector3i.y = (int)GameManager.Instance.World.RandomRange((float)PlayerPosition.y - 10, maxLevel);
+            //         if (vector3i.y < 1)
+            //             vector3i.y = PlayerPosition.y;
+            //
+            //         if (maxLevel >= terrainLevel)
+            //             vector3i.y = PlayerPosition.y;
+            //
+            //         if (!chunk.CanMobsSpawnAtPos(x, vector3i.y, z)) continue;
+            //
+            //         var flag = isPositionMinDistanceAwayFromAllPlayers(_position, _minDistance);
+            //         var num = 0;
+            //         while (flag && num < GameManager.Instance.World.Players.list.Count)
+            //         {
+            //             if ((_position - GameManager.Instance.World.Players.list[num].GetPosition()).sqrMagnitude < 2500f &&
+            //                 GameManager.Instance.World.Players.list[num].IsInViewCone(_position)) flag = false;
+            //             num++;
+            //         }
+            //
+            //         if (!flag) continue;
+            //
+            //         // Set the y position correctly.
+            //         _position.y = vector3i.y;
+            //         return true;
+            //     }
+            //
+            //     _position = Vector3.zero;
+            //     return false;
+            // }
 
 
             // This method is a modified version of vanilla, doing the same checks and balances. However, we do use the player position a bit more, and we change which biome spawning group we
@@ -170,9 +176,14 @@ namespace Harmony.WorldGen
 
                 var minDistance = _bSpawnEnemyEntities ? 28 : 48;
                 var maxDistance = _bSpawnEnemyEntities ? 54 : 70;
-                if (!flag || !FindRandomSpawnPointNearPositionUnderground(rect, minDistance, maxDistance, false, out var vector, playerPosition))
+                //if (!flag || !FindRandomSpawnPointNearPositionUnderground(rect, minDistance, maxDistance, false, out var vector, playerPosition))
+                if (!flag || !GameManager.Instance.World.FindRandomSpawnPointNearPositionUnderground(playerPosition, 16, out int x, out int y, out int z, rect.size ))
                     return;
 
+                var vector = new Vector3();
+                vector.x = x;
+                vector.z = z;
+                vector.y = y;
                 // Mob is above terrain; ignore.
                 if (vector.y > offSet)
                     return;

@@ -378,6 +378,22 @@
       </effect_group>
     </buff>
 
+    <buff name="buffCursedSamaraMorganTest" name_key="Samara Morgan" icon="ui_game_symbol_destruction2" remove_on_death="false" hidden="false">
+      <duration value="10"/>
+      <stack_type value="replace"/>
+      <effect_group name="Cursed from Screamers">
+        <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="buffCursed"/>
+        <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="cvarSamaraCurse" operation="set" value="1" />
+      </effect_group>
+
+      <effect_group name="Remove Cursed">
+        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="cvarSamaraCurse" operation="set" value="0" />
+        <triggered_effect trigger="onSelfBuffRemove" action="RemoveBuff" buff="buffCursed"/>
+        <triggered_effect trigger="onSelfBuffFinish" action="RemoveBuff" buff="buffCursed"/>
+        <triggered_effect trigger="onSelfBuffFinish" action="RemoveBuff" buff="buffCursed"/>
+        <triggered_effect trigger="onSelfBuffFinish" action="SpawnEntitySDX, SCore" target="self" SpawnGroup="SamaraMorgan" Cvar="Leader" />
+      </effect_group>
+    </buff>
     <!-- This buff is to be used when players activate the horse icons. The intention is that they can activate the horses at any time, and their effect will be different
     dependeing on the character state: Are thy cursed? What level of a curse do they have?
     -->

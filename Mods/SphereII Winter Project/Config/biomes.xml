@@ -42,8 +42,8 @@
   <set xpath="/worldgeneration/biomes/biome//layers/layer[@filluptorg]/@blockname">terrIce</set>
 -->
   <!-- Set all global temperatures to be the same range-->
-  <set xpath="/worldgeneration/biomes/biome/weather/Temperature/@min">-80</set>
-  <set xpath="/worldgeneration/biomes/biome/weather/Temperature/@max">-100</set>
+  <set xpath="/worldgeneration/biomes/biome/weather/Temperature/@min">32</set>
+  <set xpath="/worldgeneration/biomes/biome/weather/Temperature/@max">0</set>
 
   <!-- Remove all surface biome decorations -->
   <remove xpath="/worldgeneration/biomes/biome//decorations/decoration" />
