@@ -1,0 +1,24 @@
+<configs>
+  <append xpath="/entitygroups/entitygroup[ starts-with(@name, 'WildGameForest')]">
+	<entity name="SealCub" prob="5" />
+  </append>
+
+  <append xpath="/entitygroups/entitygroup[ starts-with(@name, 'EnemyAnimals')]" >
+	<entity name="DeadSnake" prob="10" />
+<!--	<entity name="Polarbear" prob="10" /> -->
+  </append>
+  
+  <append xpath="/entitygroups/entitygroup[@name='WildGameForest']">
+	<entity name="SealCub" prob="10" />
+  </append>
+  
+<!--  <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
+	<entity name="Abominable" prob="10" />
+  </append>  -->
+
+  <append xpath="/entitygroups/entitygroup[@name='ZombiesAll']"> 
+	<entity name="Snowman" prob="10" />
+	<entity name="Snowcop" prob="5" />
+  </append>
+	
+</configs>
