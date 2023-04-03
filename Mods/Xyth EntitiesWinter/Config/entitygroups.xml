@@ -4,8 +4,8 @@
   </append>
 
   <append xpath="/entitygroups/entitygroup[ starts-with(@name, 'EnemyAnimals')]" >
-	<entity name="DeadSnake" prob="10" />
-<!--	<entity name="Polarbear" prob="10" /> -->
+	<entity name="DeadSnake" prob="15" />
+	<entity name="Polarbear" prob="10" /> 
   </append>
   
   <append xpath="/entitygroups/entitygroup[@name='WildGameForest']">
@@ -17,8 +17,8 @@
   </append>  -->
 
   <append xpath="/entitygroups/entitygroup[@name='ZombiesAll']"> 
-	<entity name="Snowman" prob="10" />
-	<entity name="Snowcop" prob="5" />
+	<entity name="Snowman" prob="5" />
+	<entity name="Snowcop" prob="3" />
   </append>
 	
 </configs>

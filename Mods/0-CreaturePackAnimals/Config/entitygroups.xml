@@ -6,9 +6,9 @@
 		<entity name="animalCrow" />
 		<entity name="animalEagle" />
 		<entity name="animalAlcatraz" />
-		<entity name="animalPug" prob=".25" />
-		<entity name="animalBeagle" prob=".25" />
-		<entity name="animalBat" prob=".25" />
+		<entity name="animalPug" prob=".5" />
+		<entity name="animalBeagle" prob=".5" />
+		<entity name="animalBat" prob=".5" />
 		<entity name="animalBats" />
 		<entity name="animalPenguin" />
 	</append>
@@ -33,17 +33,17 @@
 		<entity name="animalFox" prob="10" />
 		<entity name="animalWulf" prob="10" />
 		<entity name="animalWolfhound" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="10"/>
-		<entity name="animalSnowTornado_X" prob="20"/>
-		<entity name="animalSnowShark_X" prob="5"/>
+		<entity name="animalSnowSwarm_X" prob="20"/>
+		<entity name="animalSnowTornado_X" prob="30"/>
+		<entity name="animalSnowShark_X" prob="10"/>
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsSnow']">	
 		<entity name="animalFox" prob="10" />
 		<entity name="animalWulf" prob="10" />
 		<entity name="animalWolfhound" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="10"/>
-		<entity name="animalSnowTornado_X" prob="20"/>
-		<entity name="animalSnowShark_X" prob="5"/>
+		<entity name="animalSnowSwarm_X" prob="20"/>
+		<entity name="animalSnowTornado_X" prob="30"/>
+		<entity name="animalSnowShark_X" prob="10"/>
 		
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsForest']">	
@@ -51,9 +51,9 @@
 		<entity name="animalPug" prob="3" />
 		<entity name="animalBeagle" prob="3" />
 		<entity name="animalWolfhound" prob="3" />
-		<entity name="animalSnowSwarm_X" prob="10"/>
-		<entity name="animalSnowTornado_X" prob="20"/>
-		<entity name="animalSnowShark_X" prob="3"/>
+		<entity name="animalSnowSwarm_X" prob="20"/>
+		<entity name="animalSnowTornado_X" prob="30"/>
+		<entity name="animalSnowShark_X" prob="10"/>
 		
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsBurntForest']">
@@ -61,8 +61,8 @@
 		<entity name="animalCrow" prob="5" />
 		<entity name="animalGuppyInsect" prob="5"/>
 		<entity name="animalBanditWolf" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="10"/>
-		<entity name="animalSnowTornado_X" prob="20"/>
+		<entity name="animalSnowSwarm_X" prob="20"/>
+		<entity name="animalSnowTornado_X" prob="30"/>
 		<entity name="animalSnowShark_X" prob="3"/>
 		
 	</append>
@@ -72,8 +72,8 @@
 		<entity name="animalGuppyInsect" prob="10"/>
 		<entity name="animalBloodFlySwarm_X" prob="10"/>
 		<entity name="animalBanditWolf" prob="10" />
-		<entity name="animalSnowSwarm_X" prob="10"/>
-		<entity name="animalSnowTornado_X" prob="20"/>
+		<entity name="animalSnowSwarm_X" prob="20"/>
+		<entity name="animalSnowTornado_X" prob="30"/>
 		<entity name="animalSnowShark_X" prob="5"/>		
 	</append>	
 	<append xpath="/entitygroups/entitygroup[@name='WolfGroup']">	
