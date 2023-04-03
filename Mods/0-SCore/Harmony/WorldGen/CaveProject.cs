@@ -51,10 +51,10 @@ namespace Harmony.WorldGen
         public class CaveProjectSpawnmanagerBiomes
         {
             // We want to run our cave spawning class right under the main biome spawner.
-            public static void Postfix(SpawnManagerBiomes __instance, string _spawnerName, bool _bSpawnEnemyEntities, object _userData, ref List<Entity> ___spawnNearList, ref int ___lastClassId)
+            public static bool Prefix(SpawnManagerBiomes __instance, string _spawnerName, bool _bSpawnEnemyEntities, object _userData, ref List<Entity> ___spawnNearList, ref int ___lastClassId)
             {
                 if (!Configuration.CheckFeatureStatus(AdvFeatureClass, Feature))
-                    return;
+                    return true;
 
 
                 if (!GameUtils.IsPlaytesting())
@@ -63,6 +63,8 @@ namespace Harmony.WorldGen
                     SpawnUpdate(_spawnerName, _bSpawnEnemyEntities, _userData as ChunkAreaBiomeSpawnData,
                         ref ___spawnNearList, ref ___lastClassId);
                 }
+
+                return true;
             }
 
             private static bool isPositionMinDistanceAwayFromAllPlayers(Vector3 _position, int _minDistance)
@@ -177,7 +179,8 @@ namespace Harmony.WorldGen
                 var minDistance = _bSpawnEnemyEntities ? 28 : 48;
                 var maxDistance = _bSpawnEnemyEntities ? 54 : 70;
                 //if (!flag || !FindRandomSpawnPointNearPositionUnderground(rect, minDistance, maxDistance, false, out var vector, playerPosition))
-                if (!flag || !GameManager.Instance.World.FindRandomSpawnPointNearPositionUnderground(playerPosition, 16, out int x, out int y, out int z, rect.size ))
+                var size = new Vector3(60, 10, 60);
+                if (!flag || !GameManager.Instance.World.FindRandomSpawnPointNearPositionUnderground(playerPosition, 16, out int x, out int y, out int z, size ))
                     return;
 
                 var vector = new Vector3();
@@ -214,10 +217,11 @@ namespace Harmony.WorldGen
                 var num = -1;
                 var num2 = gameRandom.RandomRange(biomeSpawnEntityGroupList.list.Count);
                 var j = 0;
+                
                 while (j < 5)
                 {
                     BiomeSpawnEntityGroupData biomeSpawnEntityGroupData2 = biomeSpawnEntityGroupList.list[num2];
-                    if ((_chunkBiomeSpawnData.groupsEnabledFlags & 1 << num2) != 0 && (biomeSpawnEntityGroupData2.daytime == EDaytime.Any || biomeSpawnEntityGroupData2.daytime == edaytime))
+                    if (biomeSpawnEntityGroupData2.daytime == EDaytime.Any || biomeSpawnEntityGroupData2.daytime == edaytime)
                     {
                         bool flag2 = EntityGroups.IsEnemyGroup(biomeSpawnEntityGroupData2.entityGroupRefName);
                         if (!flag2 || _bSpawnEnemyEntities)
@@ -227,6 +231,7 @@ namespace Harmony.WorldGen
                             {
                                 num4 = EntitySpawner.ModifySpawnCountByGameDifficulty(num4);
                             }
+                            
                             entityGroupName = biomeSpawnEntityGroupData2.entityGroupRefName + "_" + biomeSpawnEntityGroupData2.daytime.ToStringCached<EDaytime>();
                             ulong respawnDelayWorldTime = _chunkBiomeSpawnData.GetRespawnDelayWorldTime(entityGroupName);
                             if (respawnDelayWorldTime > 0UL)
@@ -239,6 +244,7 @@ namespace Harmony.WorldGen
                             }
                             if (_chunkBiomeSpawnData.GetEntitiesSpawned(entityGroupName) < num4)
                             {
+                                
                                 num = num2;
                                 break;
                             }
