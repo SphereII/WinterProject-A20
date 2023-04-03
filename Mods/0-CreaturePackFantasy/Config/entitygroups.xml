@@ -1,0 +1,34 @@
+﻿<configs>
+  <append xpath="/entitygroups" >
+    <entitygroup name="sleeperSphereII_Nightmares_Stage1">
+      <entity name="fantasyNightmare01" />
+      <entity name="fantasyNightmare02" />
+      <entity name="fantasyNightmare03" />
+      <entity name="fantasyNightmare04" />
+      <entity name="fantasyNightmare05" />
+      <entity name="fantasyNightmare06" />
+    </entitygroup>
+
+    <entitygroup name="Nightmares">
+      <entity name="fantasyNightmare01" />
+      <entity name="fantasyNightmare02" />
+      <entity name="fantasyNightmare03" />
+      <entity name="fantasyNightmare04" />
+      <entity name="fantasyNightmare05" />
+      <entity name="fantasyNightmare06" />
+    </entitygroup>
+
+    <entitygroup name="FlyingNightmares">
+      <entity name="fantasyNightmare03Flying" />
+      <entity name="animalBloodFlySwarm_X" />
+      <entity name="animalSnowTornado_X" />
+      <entity name="animalBats" />
+      <entity name="animalBloatfly" />
+      <entity name="animalGuppyInsect" />
+    </entitygroup>
+  </append>
+  
+  <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
+    <entity name="fantasyNightmare03Flying" prob="0.10"/>
+  </append>
+</configs>
