@@ -74,6 +74,7 @@
 
 		<item name="handZombieSnowman">
 			<property name="Extends" value="meleeHandMaster"/>
+			<property name="HoldType" value="4"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="Degradation" value="99999" param1="true"/>
 			<property class="Action0">
@@ -102,7 +103,7 @@
 				<passive_effect name="ModSlots" operation="base_set" value="0"/>
 				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="150"/>
-				<passive_effect name="MaxRange" operation="base_set" value="300"/>
+				<passive_effect name="MaxRange" operation="base_set" value="200"/>
 				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
 				<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
 				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2"/>
@@ -116,6 +117,7 @@
 
 		<item name="handZombieSnowmanCop">
 			<property name="Extends" value="meleeHandMaster"/>
+			<property name="HoldType" value="4"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="Degradation" value="99999" param1="true"/>
 			<property class="Action0">
@@ -143,7 +145,7 @@
 				<passive_effect name="DamageFalloffRange" operation="base_set" value="150"/>
 				<passive_effect name="MaxRange" operation="base_set" value="200"/>
 				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
-				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="10"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="5"/>
 				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2"/>
 			</effect_group>
 		</item>	

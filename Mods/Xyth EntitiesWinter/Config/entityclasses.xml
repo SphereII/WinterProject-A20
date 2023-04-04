@@ -118,12 +118,10 @@
       <property name="RootMotion" value="false" />
       <property name="HasRagdoll" value="true" />
 	  <property name="LookAtAngle" value="0"/>
-      <property name="Mesh" value="#@modfolder:Resources/Snowmen.unity3d?Snowman_X" />
+      <property name="Mesh" value="#@modfolder:Resources/Snowmen2.unity3d?Snowman_X" />
       <property name="Class" value="EntityZombie"/>
       <property name="HandItem" value="handZombieSnowman"/>
       <property name="RightHandJointName" value="Muzzle" />
-      <property name="AttackAnimations" value="Attack0, Toss0" />
-      <property name="AttackIndexes" value="0" />
       <property name="ModelType" value="Standard"/>
       <property name="CanClimbLadders" value="false"/>
       <property name="PhysicsBody" value="zombieFat"/>
@@ -170,11 +168,10 @@
       <property name="RootMotion" value="false" />
 	  <property name="LookAtAngle" value="0"/>
       <property name="HasRagdoll" value="true" />
-      <property name="Mesh" value="#@modfolder:Resources/Snowmen.unity3d?Snowcop_X" />
+      <property name="Mesh" value="#@modfolder:Resources/Snowmen2.unity3d?Snowcop_X" />
       <property name="Class" value="EntityZombieCop"/>
       <property name="HandItem" value="handZombieSnowmanCop"/>
       <property name="RightHandJointName" value="Muzzle" />
-      <property name="AttackIndexes" value="0" />
       <property name="ModelType" value="Standard"/>
       <property name="CanClimbLadders" value="false"/>
       <property name="PhysicsBody" value="zombieFat"/>
