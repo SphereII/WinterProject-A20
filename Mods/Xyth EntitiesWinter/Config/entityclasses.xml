@@ -35,7 +35,7 @@
       <property name="HasRagdoll" value="true" />
       <property name="Parent" value="Animals"/>
       <property name="Class" value="EntityAnimalRabbit"/>
-      <property name="MoveSpeedPanic" value=".8"/>
+      <property name="MoveSpeedPanic" value=".9"/>
       <property name="MaxViewAngle" value="360"/>
       <property name="MaxTurnSpeed" value="180" />
       <drop event="Harvest" name="foodRawMeat" count="4" tool_category="Butcher"/>
@@ -51,7 +51,7 @@
     </entity_class>
     <entity_class name="Abominable" extends="zombieTemplateMale">
       <!-- Snowman by junaidamin is licensed under CC Attribution -->
-      <!--<property name="AvatarController" value="MecanimSDX, SCore" />-->
+    
 	  <property name="AvatarController" value="AvatarAnimalController"/> 
       <property name="RootMotion" value="false" />
       <property name="HasRagdoll" value="true" />
@@ -87,10 +87,6 @@
       <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
       <property name="AITarget-5" value=""/>
       <property name="SightRange" value="80"/>
-      <property name="AttackAnimations" value="Attack1, Attack2, Attack3, GrabAttack, Roar" />
-      <property name="AttackIndexes" value="4" />
-      <property name="PainIndexes" value="2" />
-      <property name="SpecialAttackIndexes" value="0" />
       <property name="SoundRandomTime" value="60.0"/>
       <property name="SoundRandom" value="AbominableRandom" />
       <property name="SoundAlert" value="AbominableAlert" />
@@ -248,8 +244,8 @@
       <property name="AITarget-3" value="SetNearestCorpseAsTarget" data="class=EntityPlayer"/>
       <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,15,0,EntityNPC,15,0"/>
       <property name="AITarget-5" value=""/>
-      <property name="SoundHurt" value="Animals/Snake/snakepain"/>
-      <property name="SoundDeath" value="Animals/Snake/snakedeath"/>
+      <property name="SoundHurt" value=""/>
+      <property name="SoundDeath" value=""/>
       <property name="SoundRandom" value="Animals/Snake/snakeroam"/>
       <property name="SoundSense" value="Animals/Snake/snakesense"/>
       <property name="SoundAlert" value="Animals/Snake/snakealert"/>

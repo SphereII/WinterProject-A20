@@ -6,8 +6,8 @@
 			<property name="CustomIcon" value="missingIcon"/><property name="CustomIconTint" value="90ff90"/>
 			<property name="HoldType" value="45"/>
 			<property name="HoldingItemHidden" value="true"/>
-			<property name="Meshfile" value="#@modfolder:Resources/Snowmen.unity3d?Snowman_X" />
-			<property name="DropMeshfile"  value="#@modfolder:Resources/Snowmen.unity3d?Snowman_X" />
+			<property name="Meshfile" value="#@modfolder:Resources/Snowmen2.unity3d?Snowman_X" />
+			<property name="DropMeshfile"  value="#@modfolder:Resources/Snowmen2.unity3d?Snowman_X" />
 			<property name="Material" value="MresourceScrapIron"/>
 			<property name="Weight" value="1"/>
 			<property name="Stacknumber" value="1"/> 
@@ -151,6 +151,7 @@
 		</item>	
 		<item name="handZombieAbominable">
 			<property name="Extends" value="meleeHandMaster"/>
+			<property name="HoldType" value="4"/>
 			<property name="CreativeMode" value="None"/>
 			<property name="Degradation" value="99999" param1="true"/>
 			<property class="Action0">

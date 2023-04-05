@@ -12,9 +12,9 @@
 	<entity name="SealCub" prob="10" />
   </append>
   
-<!--  <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
+  <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
 	<entity name="Abominable" prob="10" />
-  </append>  -->
+  </append>  
 
   <append xpath="/entitygroups/entitygroup[@name='ZombiesAll']"> 
 	<entity name="Snowman" prob="5" />
