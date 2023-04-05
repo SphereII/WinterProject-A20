@@ -136,24 +136,22 @@ public static class WinterProjectPrefab
                         //if (log)
                         //    Write("Set " + worldX + "," + snowY + "," + worldZ + " to snow || world  " + chunk.GetWorldPos() + " applied: " + (check.type != snow.type) + "  rpc: " + Rpc);
 
-                        if (check.type != snow.type)
+                        if (check.type == snow.type) continue;
+                        if (notifyRpc)
                         {
-                            if (notifyRpc)
-                            {
-                                var pos = chunk.GetWorldPos();
-                                pos.x += chunkX;
-                                pos.y = snowY;
-                                pos.z += chunkZ;
-                                //GameManager.Instance.World.SetBlockRPC(pos, snow, MarchingCubes.DensityTerrain);
-                                Changes.Add(new BlockChangeInfo(pos, snow, MarchingCubes.DensityTerrain));
-                            }
-                            else
-                            {
-                                chunk.SetBlock(GameManager.Instance.World, chunkX, snowY, chunkZ, snow);
+                            var pos = chunk.GetWorldPos();
+                            pos.x += chunkX;
+                            pos.y = snowY;
+                            pos.z += chunkZ;
+                            //GameManager.Instance.World.SetBlockRPC(pos, snow, MarchingCubes.DensityTerrain);
+                            Changes.Add(new BlockChangeInfo(pos, snow, MarchingCubes.DensityTerrain));
+                        }
+                        else
+                        {
+                            chunk.SetBlock(GameManager.Instance.World, chunkX, snowY, chunkZ, snow);
 
-                                var density = snowY == y + snowHeight - 1 ? (sbyte)-Rand.Next(1, 127) : MarchingCubes.DensityTerrain;
-                                chunk.SetDensity(chunkX, snowY, chunkZ, density);
-                            }
+                            var density = snowY == y + snowHeight - 1 ? (sbyte)-Rand.Next(1, 127) : MarchingCubes.DensityTerrain;
+                            chunk.SetDensity(chunkX, snowY, chunkZ, density);
                         }
                     }
 

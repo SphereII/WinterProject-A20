@@ -14,6 +14,40 @@ Version:
 	
 	[ Fire Manager ]
 		- Tagged Material: Mhay to be flammable.
+		- Re-factored FireManager to be clearer.
+		- Added some performance tweaks:
+			- Sound will not always play on each fire block. Instead, each block will have a random chance to either play a sound or not. (10% chance to play a sound)
+			- Similar to the sound, fire particles may not appear on each block. 10% chance a block will not display a particle.
+				- This needs to be evaluated to see if the desired appearance of a fire is detrimental.
+			- These checks are re-evaluable on the CheckInterval time.
+		- Added a check for Explosion.
+			- If a block has an explosion property, and is set as flammable, the block will trigger an explosion when it downgrades.
+
+	[ Explosion Particles ]
+		- The vanilla prefabExplosions array that maintains a list of possible explosion particles via the Explosion.ParticleIndex is set to 20.
+		- When a game starts, the SCore will check it's ConfigurationBlock's ExternalParticles node for external particles.
+			Example:
+				<property class="ExternalParticles">
+					<!-- The name is not used by the system. The index value will be displayed in the log during a game boot up. -->
+					<!-- Review the log to find out your index. -->
+					<!-- The Index is a GetHashCode() on the value. -->
+					<property name="SmokeParticle" value="#@modfolder:Resources/PathSmoke.unity3d?P_PathSmoke_X" />
+					<property name="FireParticle" value="#@modfolder:Resources/gupFireParticles.unity3d?gupBeavis05-Heavy" /> 
+				</property>
+
+		- If a particle entry is detected, this particle will be registered with the main ParticleEffect.RegisterBundleParticleEffect.
+			- This is the same particle effect that is used elsewhere in the system, including the Fire Manager.
+		- The index of this particle will be the bundle's GetHashCode(). 
+			- This value can be viewed in the log file:
+				Registering External Particle: Index: -87591912 for #@modfolder(0-SCore):Resources/PathSmoke.unity3d?P_PathSmoke_X
+
+			- This index is what you should use in your Explosion.ParticleIndex.
+				<property name="Explosion.ParticleIndex" value="-87591912"/> 
+
+		- This check is applied via a Harmony patch to GameManager's ExplosionClient, and will be triggered if the ParticleIndex is not within a range of 0 and 20.
+
+		- Append to SCore's ConfigurationBlock's ExternalParticles Entry.
+		
 
 Version: 20.6.453.1912
 

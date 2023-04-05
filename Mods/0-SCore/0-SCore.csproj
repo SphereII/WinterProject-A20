@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>SCore.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -75,6 +75,7 @@
     <Compile Include="Harmony\Fire\Explosion.cs" />
     <Compile Include="Harmony\FoodSpoilage\FoodSpoilage.cs" />
     <Compile Include="Harmony\GameManager\BroadcastHook.cs" />
+    <Compile Include="Harmony\GameManager\ExplosionClient.cs" />
     <Compile Include="Harmony\GameManager\FireHooks.cs" />
     <Compile Include="Harmony\GamePath\TraversalProvider.cs" />
     <Compile Include="Harmony\GamePath\UtilsDrawLine.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Scripts\Buffs\RequirementEveryXDaySDX.cs" />
     <Compile Include="Scripts\Buffs\RequirementEveryXHourSDX.cs" />
     <Compile Include="Scripts\Buffs\RequirementIsBloodMoon.cs" />
+    <Compile Include="Scripts\Buffs\RequirementIsOutdoor.cs" />
     <Compile Include="Scripts\Buffs\RequirementIsUnderground.cs" />
     <Compile Include="Scripts\Buffs\RequirementLookingAt.cs" />
     <Compile Include="Scripts\Buffs\RequirementOnSpecificBiomeSDX.cs" />
@@ -451,6 +453,7 @@
     <Content Include="Config\loadingscreen.xml" />
     <Content Include="Config\Localization.txt" />
     <Content Include="Config\quests.xml" />
+    <Content Include="Config\sounds.xml" />
     <Content Include="Config\spawning.xml" />
     <Content Include="Config\utilityai.xml" />
     <Content Include="Config\XUi\windows.xml" />
@@ -671,6 +674,9 @@
       <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
       <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
       <Private>False</Private>
@@ -708,5 +714,18 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+
+			:: Update the ModInfo.xml
+			IF EXIST $(ProjectDir)\ModInfo.xml (
+				IF EXIST ..\Tools\bin\sed.exe (
+					:: Sort out the version number from the Configuration, and grab the last digits of the Version number
+					echo Updating Version number to @(VersionNumber)
+					..\Tools\bin\sed.exe -i "s/Version value=\"*.*.*.*\"/Version value=\"@(VersionNumber)\"/g" ModInfo.xml
+				)
+			)
+		</PostBuildEvent>
   </PropertyGroup>
 </Project>
