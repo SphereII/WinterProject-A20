@@ -16,7 +16,7 @@ namespace Harmony.ZombieFeatures
      */
     public class InertEntity
     {
-        private static bool IsInert(global::EntityAlive alive)
+        public static bool IsInert(global::EntityAlive alive)
         {
             if (alive == null)
                 return false;
@@ -63,6 +63,16 @@ namespace Harmony.ZombieFeatures
 
                 __instance.emodel.avatarController.GetAnimator().enabled = false;
                 return false;
+            }
+        }
+        
+        [HarmonyPatch(typeof(global::EntityAlive))]
+        [HarmonyPatch("OnUpdateEntity")]
+        public class EntityAliveOnUpdateLive
+        {
+            public static bool Prefix(global::EntityAlive __instance)
+            {
+                return !IsInert(__instance);
             }
         }
 

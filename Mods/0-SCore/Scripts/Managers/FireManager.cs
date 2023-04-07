@@ -317,10 +317,11 @@ public class FireManager
 
             var rand = _random.RandomRange(0f, 1f);
             ToggleSound(blockPos, rand < 0.10);
-            ToggleParticle(blockPos, rand > 0.90);
-
+            //ToggleParticle(blockPos, rand > 0.90);
+            ToggleParticle(blockPos, true);
+            var chanceToExtinguish = rand > 0.95;
             // If the new block has changed, check to make sure the new block is flammable. Note: it checks the blockValue, not blockPos, since the change hasn't been committed yet.
-            if (!IsFlammable(block) || block.isair )
+            if (!IsFlammable(block) || block.isair || chanceToExtinguish)
             {
                 // queue up the change
                 if (DynamicMeshManager.Instance != null)

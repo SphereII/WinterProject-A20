@@ -144,7 +144,10 @@ public static class WinterProjectPrefab
                             pos.y = snowY;
                             pos.z += chunkZ;
                             //GameManager.Instance.World.SetBlockRPC(pos, snow, MarchingCubes.DensityTerrain);
-                            Changes.Add(new BlockChangeInfo(pos, snow, MarchingCubes.DensityTerrain));
+                            var density = snowY == y + snowHeight - 1 ? (sbyte)-Rand.Next(1, 127) : MarchingCubes.DensityTerrain;
+
+                            //Changes.Add(new BlockChangeInfo(pos, snow, MarchingCubes.DensityTerrain));
+                            Changes.Add(new BlockChangeInfo(pos, snow, density));
                         }
                         else
                         {
@@ -163,6 +166,9 @@ public static class WinterProjectPrefab
 
             Write("Changes: " + (Changes == null ? "null" : Changes.Count.ToString()));
             if (Changes != null) GameManager.Instance.SetBlocksRPC(Changes);
+            
+            
+            
         }
     }
 

@@ -1,27 +1,13 @@
 ﻿<configs>
-    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='FoodSpoilage']/property[@name='FoodSpoilage']/@value">
-        true
-    </set>
-    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedPlayerFeatures']/property[@name='OneBlockCrouch']/@value">
-        true
-    </set>
-    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedNPCFeatures']/property[@name='MakeTraderVulnerable']/@value">
-        true
-    </set>
-    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedPrefabFeatures']/property[@name='DisableTraderProtection']/@value">
-        true
-    </set>
+    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='FoodSpoilage']/property[@name='FoodSpoilage']/@value">true</set>
+    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedPlayerFeatures']/property[@name='OneBlockCrouch']/@value">true</set>
+    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedNPCFeatures']/property[@name='MakeTraderVulnerable']/@value">true</set>
+    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='AdvancedPrefabFeatures']/property[@name='DisableTraderProtection']/@value">true</set>
 
-    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='FoodSpoilage']/property[@name='TickPerLoss']/@value">
-        30
-    </set>
-    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='FoodSpoilage']/property[@name='Logging']/@value">
-        false
-    </set>
+    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='FoodSpoilage']/property[@name='TickPerLoss']/@value">30</set>
+    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='FoodSpoilage']/property[@name='Logging']/@value">false</set>
 
-    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='Theme']/property[@name='Spook']/@value">
-        true
-    </set>
+    <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='Theme']/property[@name='Spook']/@value">true</set>
 
     <!-- Caves -->
     <set xpath="/blocks/block[@name='ConfigFeatureBlock']/property[@class='CaveConfiguration']/property[@name='CaveEnabled']/@value">true</set>
@@ -48,7 +34,9 @@
             <property name="Material" value="Msnow"/>
             <property name="Shape" value="Terrain"/>
             <property name="Mesh" value="terrain"/>
-            <property name="Texture" value="6"/>
+            <property name="Texture" value="6"/> <!-- 569: stone texture 1 with dirt sound -->
+            
+            <!-- 569? -->
             <property name="ImposterExclude" value="true"/>
             <property name="CanMobsSpawnOn" value="true"/>
             <property name="FilterTags" value="fterrain"/>
@@ -58,6 +46,7 @@
             <property name="PassThroughDamage" value="true"/>
             <property name="CustomIcon" value="terrSnow"/>
             <property name="SellableToTrader" value="false"/>
+            <property name="TintColor" value="435E70" />
         </block>
     </insertAfter>
     
@@ -81,7 +70,6 @@
   
     </insertAfter>
   -->
-    <!--
   <append xpath="/blocks/block[@name='bed01']">
     <property name="BuffsWhenWalkedOn" value="buffsmallBed;BedTerrors"/>
   </append>
@@ -97,7 +85,6 @@
   <append xpath="/blocks/block[@name='bunkBedMattress']">
     <property name="BuffsWhenWalkedOn" value="buffsmallBed;BedTerrors"/>
   </append>
-        -->
     <!-- remove drops to reduce index errors -->
     <remove xpath="/blocks/block[@name='terrSnow']/drop[@event='Fall']"/>
 
@@ -458,7 +445,7 @@
             <!-- Old ice texture :(
             <property name="Texture" value="178"/>
             -->
-            <property name="Texture" value="6"/>
+            <property name="Texture" value="6"/> 
             <property name="ImposterExclude" value="true"/>
             <property name="CanMobsSpawnOn" value="true"/>
             <property name="FilterTags" value="fterrain"/>

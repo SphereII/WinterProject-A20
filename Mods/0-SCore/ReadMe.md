@@ -11,7 +11,14 @@ The 0-SCore is the key component to enable extra functionality for 7 Days To Die
 
 [ Change Log ]
 Version:
-	
+	[ Inert ]
+		- When an entity is inert, the entity is paused. No animations, no sound, no attacks, and takes no damage.
+		- When an entity has the following property, it will only be active at night. Otherwise, it'll be considered inert.
+		      <property name="EntityActiveWhen" value="night" /> <!-- alternative is day -->
+		- Added a check for TargetIsAlive if the entity is Inert or not. If it is, it's ignored.
+		- Added checks for IsEnemyNearby, and CanSeeTarget to do Inert checks.
+		- Added patches so inert entities will not make a sound.
+
 	[ Fire Manager ]
 		- Tagged Material: Mhay to be flammable.
 		- Re-factored FireManager to be clearer.
