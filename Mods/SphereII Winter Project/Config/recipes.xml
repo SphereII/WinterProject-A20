@@ -6,6 +6,10 @@
   <set xpath="/recipes/recipe[ starts-with(@name, 'ammoArrow')]/ingredient[@name='resourceFeather']/@count">3</set>
   <set xpath="/recipes/recipe[ starts-with(@name, 'ammoCrossbowBolt')]/ingredient[@name='resourceFeather']/@count">3</set>
 
+  <setattribute xpath="/recipes/recipe[@name='drinkJarBoiledWater']" name="craft_tool">toolCookingPot</setattribute>
+  <setattribute xpath="/recipes/recipe[@name='drinkJarRiverWater']" name="craft_tool">toolCookingPot</setattribute>
+  <setattribute xpath="/recipes/recipe[@name='drinkYuccaJuiceSmoothie']" name="craft_tool">toolCookingPot</setattribute>
+  
   <append xpath="/recipes">
     
     <recipe name="terrIce" count="5" >
