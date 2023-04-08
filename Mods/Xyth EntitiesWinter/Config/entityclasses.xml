@@ -28,7 +28,7 @@
     <entity_class name="SealCub" extends="animalTemplateTimid" >
       <property name="Mesh" value="#@modfolder:Resources/SealCub.unity3d?SealCub_X" />
 	  <property name="Faction" value="passiveanimalssmall"/>
-      <!-- <property name="AvatarController" value="MecanimSDX, SCore" /> -->
+      <property name="Tags" value="entity,animal"/>
 	  <property name="AvatarController" value="AvatarAnimalController"/> 	
       <property name="EntityType" value="Animal"/>
       <property name="RootMotion" value="false" />
@@ -49,10 +49,10 @@
 		<property name="LookAtAngle" value="0"/>
       <property name="SpawnOnDeath" value="FlyingNightmares" />
     </entity_class>
+	
     <entity_class name="Abominable" extends="zombieTemplateMale">
       <!-- Snowman by junaidamin is licensed under CC Attribution -->
-    
-	  <property name="AvatarController" value="AvatarAnimalController"/> 
+ 	  <property name="AvatarController" value="AvatarAnimalController"/> 
       <property name="RootMotion" value="false" />
       <property name="HasRagdoll" value="true" />
       <property name="Mesh" value="#@modfolder:Resources/Abominable.unity3d?Abominable_X" />
@@ -220,6 +220,7 @@
       <property name="EntityType" value="Animal"/>
 	  <property name="LookAtAngle" value="0"/>
       <property name="Mesh" value="#@modfolder:Resources/DeadSnake.unity3d?DeadSnake_X" />
+	   <property name="Tags" value="zombie"/>
       <!--Free model by Dusk_Aims  -->
       <!--<property name="AvatarController" value="MecanimSDX, SCore" />-->
 	  <property name="AvatarController" value="AvatarAnimalController"/> 
@@ -252,11 +253,9 @@
       <property name="SoundAttack" value="Animals/Snake/snakeattack"/>
       <property name="HasDeathAnim" value="true"/>
       <property name="MaxTurnSpeed" value="100"/>
-
       <property name="MoveSpeed" value="0.2"/>
       <property name="MoveSpeedAggro" value=".3, .3"/>
       <property name="MoveSpeedPanic" value="0.3"/>
-
       <property name="HandItem" value="meleeHandAnimalSnake"/>
       <property name="AttackTimeoutDay" value="1.5"/>
       <property name="AttackTimeoutNight" value="1.1"/>
@@ -285,6 +284,7 @@
       <property name="Parent" value="Enemies"/>
       <property name="PhysicsBody" value="snake"/>
       <property name="Faction" value="undead"/>
+	  <property name="Tags" value="zombie,walker,feral,cp"/>
       <property name="Mass" value="30"/>
       <property name="Weight" value="70"/>
       <property name="AITask-1" value="BreakBlock"/>
@@ -329,14 +329,6 @@
         <!-- Animal HP scale -->
       </effect_group>
     </entity_class>	
-	
-	
-	
-	
-	
-	
-	
-	
 
   </append>
 </configs>

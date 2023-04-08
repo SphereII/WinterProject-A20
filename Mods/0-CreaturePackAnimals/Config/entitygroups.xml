@@ -10,7 +10,7 @@
 		<entity name="animalBeagle" prob=".5" />
 		<entity name="animalBat" prob=".5" />
 		<entity name="animalBats" />
-		<entity name="animalPenguin" />
+		<!-- <entity name="animalPenguin" /> -->
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='AnimalsFarm']">	
 		<entity name="animalGoat" />
@@ -18,7 +18,7 @@
 		<entity name="animalFox" prob=".25" />
 		<entity name="animalPug" prob=".25" />
 		<entity name="animalBeagle" prob=".25" />
-		<entity name="animalPenguin" />
+		<!-- <entity name="animalPenguin" /> -->
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='WildGameForest']">		
 		<entity name="animalGoat" />
@@ -27,7 +27,7 @@
 		<entity name="animalEagle" />
 		<entity name="animalAlcatraz" />
 		<entity name="animalFox" />
-		<entity name="animalPenguin" />
+		<!-- <entity name="animalPenguin" /> -->
 	</append>
 	<append xpath="/entitygroups/entitygroup[@name='EnemyAnimalsDesert']">	
 		<entity name="animalFox" prob="10" />
