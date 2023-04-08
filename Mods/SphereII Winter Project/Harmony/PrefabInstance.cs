@@ -45,8 +45,9 @@ public class SphereII_WinterProject
             if (_pi.prefab.size.y - Math.Abs(_pi.prefab.yOffset) < 11)
                 return false;
 
-    //        if (_pi.prefab.PrefabName.Contains("trader_hugh"))
-      //          return true;
+            // Keep the trader above.
+            if (_pi.prefab.FileNameNoExtension.Contains("trader_hugh"))
+                return true;
 
             // Check if the current thread has a name. the GenerateWorlds for RWG has a named thread; the others do not.
             if (Thread.CurrentThread.Name != null)
@@ -65,16 +66,11 @@ public class SphereII_WinterProject
     {
         public static bool Postfix(bool __result, ref Prefab __instance, ref List<string> ___allowedZones)
         {
-
-            if (__result)
-            {
-                if (!__instance.PrefabName.Contains("trader_hugh2"))
-                {
-                    __instance.bTraderArea = false;
-                    __instance.bExcludeDistantPOIMesh = true;
-                    __instance.bCopyAirBlocks = true;
-                }
-            }
+            if (!__result) return __result;
+            if (__instance.FileNameNoExtension.Contains("trader_hugh")) return __result;
+            __instance.bTraderArea = false;
+            __instance.bExcludeDistantPOIMesh = true;
+            __instance.bCopyAirBlocks = true;
             return __result;
         }
 
@@ -92,7 +88,7 @@ public class SphereII_WinterProject
             if (__instance.Tags.Test_AllSet(POITags.Parse("SKIP_HARMONY_COPY_INTO_LOCAL")))
                 return;
 
-            if (!__instance.PrefabName.Contains("trader_hugh"))
+            if (!__instance.FileNameNoExtension.Contains("trader_hugh"))
                 WinterProjectPrefab.SetSnowPrefab(__instance, _cluster, _destinationPos, _questTags);
         }
 
@@ -106,7 +102,7 @@ public class SphereII_WinterProject
     {
         public static void Postfix(PrefabInstance __instance, Chunk _chunk)
         {
-            if (!__instance.prefab.PrefabName.Contains("trader_hugh"))
+            if (!__instance.prefab.FileNameNoExtension.Contains("trader_hugh"))
                 WinterProjectPrefab.SetSnowChunk(_chunk, __instance.boundingBoxPosition, __instance.boundingBoxSize);
         }
     }
