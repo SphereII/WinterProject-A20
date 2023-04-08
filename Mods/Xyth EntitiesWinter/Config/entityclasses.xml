@@ -274,6 +274,69 @@
         <!-- Animal HP scale -->
       </effect_group>
     </entity_class>
+	
+    <entity_class name="DeadHead" extends="animalTemplateHostile">
+      <property name="EntityType" value="Animal"/>
+	  <property name="LookAtAngle" value="0"/>
+      <property name="Mesh" value="#@modfolder:Resources/DeadHead.unity3d?IceHead_X" />
+	  <property name="AvatarController" value="AvatarAnimalController"/> 
+      <property name="RootMotion" value="false" />
+      <property name="HasRagdoll" value="true" />
+      <property name="Parent" value="Enemies"/>
+      <property name="PhysicsBody" value="snake"/>
+      <property name="Faction" value="undead"/>
+      <property name="Mass" value="30"/>
+      <property name="Weight" value="70"/>
+      <property name="AITask-1" value="BreakBlock"/>
+      <property name="AITask-2" value="Territorial"/>
+      <property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityNPC,0,EntityEnemyAnimal,0,EntityPlayer,0"/>
+      <property name="AITask-4" value="ApproachSpot"/>
+      <property name="AITask-5" value="Look"/>
+      <property name="AITask-6" value="Wander"/>
+      <property name="AITask-7" value=""/>
+      <property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityNPC,EntityPlayer"/>
+      <property name="AITarget-2" value="BlockingTargetTask"/>
+      <property name="AITarget-3" value="SetNearestCorpseAsTarget" data="class=EntityPlayer"/>
+      <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,15,0,EntityNPC,15,0"/>
+      <property name="AITarget-5" value=""/>
+      <property name="SoundHurt" value=""/>
+      <property name="SoundDeath" value=""/>
+      <property name="SoundRandom" value="Animals/Snake/snakeroam"/>
+      <property name="SoundSense" value="Animals/Snake/snakesense"/>
+      <property name="SoundAlert" value="Animals/Snake/snakealert"/>
+      <property name="SoundAttack" value="Animals/Snake/snakeattack"/>
+      <property name="HasDeathAnim" value="true"/>
+      <property name="MaxTurnSpeed" value="100"/>
+
+      <property name="MoveSpeed" value="0.2"/>
+      <property name="MoveSpeedAggro" value=".9, .9"/>
+      <property name="MoveSpeedPanic" value="0.9"/>
+
+      <property name="HandItem" value="meleeHandAnimalSnake"/>
+      <property name="AttackTimeoutDay" value="1.5"/>
+      <property name="AttackTimeoutNight" value="1.1"/>
+      <property name="ExperienceGain" value="170"/>
+      <property name="DeadBodyHitPoints" value="150"/>
+      <drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+      <drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/>
+      <drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="2"/>
+      <drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+      <drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
+      <drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+      <effect_group name="Base Effects">
+        <passive_effect name="HealthMax" operation="base_set" value="50"/>
+        <passive_effect name="HealthMax" operation="perc_add" value="0"/>
+        <!-- Animal HP scale -->
+      </effect_group>
+    </entity_class>	
+	
+	
+	
+	
+	
+	
+	
+	
 
   </append>
 </configs>

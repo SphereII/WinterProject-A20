@@ -6,6 +6,7 @@
   <append xpath="/entitygroups/entitygroup[ starts-with(@name, 'EnemyAnimals')]" >
 	<entity name="DeadSnake" prob="15" />
 	<entity name="Polarbear" prob="10" /> 
+	<entity name="DeadHead" prob="15" />
   </append>
   
   <append xpath="/entitygroups/entitygroup[@name='WildGameForest']">
