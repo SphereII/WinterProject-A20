@@ -3,6 +3,7 @@ using System;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Threading;
+using GlobalSnowEffect;
 using UnityEngine;
 
 /*
@@ -38,14 +39,12 @@ public class SphereII_WinterProject
         public static void Postfix()
         {
             var entityPlayer = GameManager.Instance.World.GetPrimaryPlayer();
-            if (entityPlayer != null)
-            {
-                var settings = entityPlayer.playerCamera.gameObject.AddComponent<GlobalSnowEffect.GlobalSnow>();
-                settings.footprints = true;
-                settings.snowAmount = 0.70f;
-                settings.cameraFrost = false;
-                settings.groundCoverage = 0.5f;
-            }
+            if (entityPlayer == null) return;
+            var settings = entityPlayer.playerCamera.gameObject.GetOrAddComponent<GlobalSnow>();
+            settings.snowAmount = 0.70f;
+            settings.cameraFrost = false;
+            settings.groundCoverage = 0.45f;
+            
         }
     }
     [HarmonyPatch(typeof(DynamicPrefabDecorator))]

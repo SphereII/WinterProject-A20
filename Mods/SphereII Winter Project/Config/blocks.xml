@@ -28,6 +28,7 @@
 
     <remove xpath="/blocks/block[@name='treePlant02']"/>
 
+ 
     <remove xpath="/blocks/block[@name='terrIce']"/>
     <insertAfter xpath="/blocks/block[@name='terrSnow']">
         <block name="terrIce">
@@ -70,9 +71,6 @@
   
     </insertAfter>
   -->
-  <append xpath="/blocks/block[@name='bed01']">
-    <property name="BuffsWhenWalkedOn" value="buffsmallBed;BedTerrors"/>
-  </append>
   <append xpath="/blocks/block[@name='bed02']">
     <property name="BuffsWhenWalkedOn" value="buffsmallBed;BedTerrors"/>
   </append>

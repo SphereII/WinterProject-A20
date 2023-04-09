@@ -85,6 +85,8 @@ public static class WinterProjectPrefab
                     if (b.type == 0)
                         continue; //still air 
 
+                    if (b.Block is BlockModelTree) break;
+                    
                     //if (Block.list[b.type].blockMaterial.StabilitySupport == false)
                     //    continue;
 
