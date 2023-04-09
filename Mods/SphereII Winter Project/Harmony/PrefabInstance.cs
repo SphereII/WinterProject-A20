@@ -30,6 +30,24 @@ public class SphereII_WinterProject
         }
     }
 
+    
+    [HarmonyPatch(typeof(GameManager))]
+    [HarmonyPatch("PlayerSpawnedInWorld")]
+    public class CloneCameraPlayer
+    {
+        public static void Postfix()
+        {
+            var entityPlayer = GameManager.Instance.World.GetPrimaryPlayer();
+            if (entityPlayer != null)
+            {
+                var settings = entityPlayer.playerCamera.gameObject.AddComponent<GlobalSnowEffect.GlobalSnow>();
+                settings.footprints = true;
+                settings.snowAmount = 0.70f;
+                settings.cameraFrost = false;
+                settings.groundCoverage = 0.5f;
+            }
+        }
+    }
     [HarmonyPatch(typeof(DynamicPrefabDecorator))]
     [HarmonyPatch("AddPrefab")]
     public class SphereII_DynamicPrefabDecorator

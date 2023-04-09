@@ -55,6 +55,22 @@
       <HintPath>..\..\7DaysToDie_Data\Managed\InControl.dll</HintPath>
       <Private>False</Private>
     </Reference>
+	  <Reference Include="ParticleSystemModule">
+      <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	  <Reference Include="VehiclesModule">
+      <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+		  <Reference Include="VR">
+      <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+		  <Reference Include="TerrainModule">
+      <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="LogLibrary">
       <HintPath>..\..\7DaysToDie_Data\Managed\LogLibrary.dll</HintPath>
       <Private>False</Private>
@@ -128,6 +144,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Scripts\GlobalSnow\GlobalSnow.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnow.ShaderParams.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnowColliderExtraInfo.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnowCollisionDetector.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnowIgnoreCoverage.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnowImageEffect.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnowLerp.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnowProfile.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnowVolume.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnowWMAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitkeep" />
