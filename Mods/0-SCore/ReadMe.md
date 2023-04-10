@@ -11,6 +11,17 @@ The 0-SCore is the key component to enable extra functionality for 7 Days To Die
 
 [ Change Log ]
 Version:
+
+	[ Lock Pick
+		- Adjusted MaxGiveAmount to be 2 * the perk level
+
+	[ Music Boxes ]
+		- Reformatted
+
+	[ IsActive ]
+		- Fixed some issues with the TileEntity AlwaysActive
+		- Re-enabled full Winter-Project support
+
 	[ Inert ]
 		- When an entity is inert, the entity is paused. No animations, no sound, no attacks, and takes no damage.
 		- When an entity has the following property, it will only be active at night. Otherwise, it'll be considered inert.
@@ -24,12 +35,11 @@ Version:
 		- Re-factored FireManager to be clearer.
 		- Added some performance tweaks:
 			- Sound will not always play on each fire block. Instead, each block will have a random chance to either play a sound or not. (10% chance to play a sound)
-			- Similar to the sound, fire particles may not appear on each block. 10% chance a block will not display a particle.
-				- This needs to be evaluated to see if the desired appearance of a fire is detrimental.
+			- Added 5% chance for a block to self-extinguish.	
 			- These checks are re-evaluable on the CheckInterval time.
 		- Added a check for Explosion.
 			- If a block has an explosion property, and is set as flammable, the block will trigger an explosion when it downgrades.
-
+		
 	[ Explosion Particles ]
 		- The vanilla prefabExplosions array that maintains a list of possible explosion particles via the Explosion.ParticleIndex is set to 20.
 		- When a game starts, the SCore will check it's ConfigurationBlock's ExternalParticles node for external particles.

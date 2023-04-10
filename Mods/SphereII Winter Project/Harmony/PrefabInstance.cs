@@ -44,7 +44,15 @@ public class SphereII_WinterProject
             settings.snowAmount = 0.70f;
             settings.cameraFrost = false;
             settings.groundCoverage = 0.45f;
+            //settings.footprints = true;
             
+            //settings.groundCheck = GROUND_CHECK.RayCast;
+            //settings.characterController = entityPlayer.PhysicsTransform.GetComponent<CharacterController>();
+            //settings.footprintsObscurance = 0.3f;
+            //settings.footprintsScale = 10;
+
+
+
         }
     }
     [HarmonyPatch(typeof(DynamicPrefabDecorator))]
