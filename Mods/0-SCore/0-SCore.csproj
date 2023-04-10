@@ -187,6 +187,7 @@
     <Compile Include="Scripts\Buffs\RequirementSameFactionSDX.cs" />
     <Compile Include="Scripts\Cache\SphereCache.cs" />
     <Compile Include="Scripts\ConsoleCmd\ConsoleCmdActionFireClear.cs" />
+    <Compile Include="Scripts\ConsoleCmd\ConsoleCmdDumpEntities.cs" />
     <Compile Include="Scripts\ConsoleCmd\ConsoleCmdUnitTestSCore.cs" />
     <Compile Include="Scripts\ConsoleCmd\ConsoleCmdlock.cs" />
     <Compile Include="Scripts\ConsoleCmd\ConsoleCmdUtilityAI.cs" />

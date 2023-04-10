@@ -1,0 +1,87 @@
+Key,english
+animalSnowSwarm_X,Snow Swarm
+animalBloodFlySwarm_X,Blood Fly Swarm
+animalSnowTornado_X,Snow Tornado
+animalSnowShark_X,Snow Shark
+animalGoat,Goat
+animalSpider01,Loxosceles reclusa
+animalSpider02,Opiliones
+animalSpider03,Linyphiidae
+animalBanditWolf,Loki
+animalRobin,a robin
+animalCrow,a crow
+animalBat,a bat
+animalBats,bats
+animalEagle,an eagle
+animalAlcatraz,an Alcatraz
+animalBloatfly,a bloat fly
+animalGuppyInsect,Guppy's mite
+animalWolfhound,a wolf hound
+animalBeagle,Charlie
+animalPug,Milo
+animalWulf,Wulf
+animalPenguin,Eudyptes robustus
+fantasyNightmare01,Soilface
+fantasyNightmare02,Brinebeast
+fantasyNightmare03,Deadeyes
+fantasyNightmare03Flying,Vaporface
+fantasyNightmare04,Abyssling
+fantasyNightmare05,Germling
+fantasyNightmare06,Leroy
+npcHarleySRifle,Harley
+npcHarleyVomitHand,Harley
+guppyLightning,Lightning
+guppyFireNado,Firenado
+Samara,Samara
+zombieBurnt_white,Crispy
+zombieDemolition_white,Demolition
+zombieFatCop_white,Fat Cop
+zombieFatHawaiian_white,Fat Hawaiian
+zombieWightFeral_white,Feral Wight
+zombieMaleHazmat_white,Hazmat
+zombieSkateboarder_white,Tony Hawks
+zombieLab_white,Reagan Caplan
+zombieNurse_white,nurse
+zombieScreamer_white,your mom
+zombieSoldier_white,soldier
+zombieSpider_white,spider
+animalZombieDog_white,dog
+animalZombieWolf_white,wolf
+zombieArlene_Winter_White,Arlene
+zombieArleneFeral_Winter_Blue,Arlene
+zombieFatMama_Winter_White,Fat Mama
+zombieFatMamaFeral_Winter_Blue,Feral Fat mama
+zombieBoe_Winter_White,Boe
+zombieBoeFeral_Winter_Blue,Feral Boe
+zombieSteveCrawler_Winter_White,Steve
+zombieSteveCrawlerFeral_Winter_Blue,Feral Steve
+zombieDarlene_Winter_White,Darlene
+zombieDarleneFeral_Winter_Blue,Feral Darlene
+zombieJoe_Winter_White,Joe
+zombieJoeFeral_Winter_Blue,Joe Mama
+zombieMarlene_Winter_White,Marlene
+zombieMarleneFeral_Winter_Blue,Feral Marlene
+zombieBiker_Winter_White,Biker
+zombieBikerFeral_Winter_Blue,Fiesty Biker
+zombieMoe_Winter_White,Moe
+zombieMoeFeral_Winter_Blue,Feral Moe
+zombieSteve_Winter_White,Steve
+zombieSteveFeral_Winter_Blue,Feral Steve
+zombieYo_Winter_White,Yo
+zombieYoFeral_Winter_Blue,Feral Yo
+zombieJanitor_Winter_White,Scruffy
+zombieJanitorFeral_Winter_Blue,Angry Scruffy
+zombieUtilityWorker_Winter_White,Utility Worker
+zombieUtilityWorkerFeral_Winter_Blue,Unioned Utility Worker
+zombieStripper_Winter_White,Mimi Bobeck
+zombieStripperFeral_Winter_Blue,Mim Bobeck
+zombieSuit_Winter_White,Businessman
+zombieSuitFeral_Winter_Blue,laidoff businessman
+zombieMannequinFemale,Manny
+Polarbear,Polar Bear
+SealCub,Seal Cub
+Abominable,Abominable
+Snowman,Snowman
+Snowcop,Snow Cop
+DeadSnake,Dead Snake
+DeadHead,Dead Head
