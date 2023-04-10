@@ -34,7 +34,6 @@
 		</effect_group>
     </buff>
 	
-
 	<buff name="BedTerrors"> <stack_type value="replace"/> <duration value="8"/>  
 		<effect_group name="BedTerrorsChange">
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="BedTerror" operation="set" value="randomint(1,3)"/>

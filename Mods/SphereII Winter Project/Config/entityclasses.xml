@@ -4,11 +4,19 @@
   <append xpath="/entity_classes/entity_class[starts-with(@name, 'zombieTemplateMale')]" >
 	<effect_group name="frostshield">
     <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffFrostShield">
-      <requirement name="RequirementIsOutdoor, SCore"/>
-    </triggered_effect>
+	<requirement name="RequirementIsOutdoor, SCore"/>
+	</triggered_effect>
 	</effect_group> 
   </append> 
-
+  
+   <append xpath="/entity_classes/entity_class[starts-with(@name, 'zombieRegularTemplate')]" >
+	<effect_group name="frostshield">
+    <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffFrostShield">
+	<requirement name="RequirementIsOutdoor, SCore"/>
+	</triggered_effect>
+	</effect_group> 
+  </append>  
+  
   <append xpath="/entity_classes/entity_class[@name='npcTraderTemplate']/effect_group" >
        <triggered_effect trigger="onSelfEnteredGame" action="AddBuff" target="self" buff="buffRemoveDuplicateTrader"/>
   </append>
