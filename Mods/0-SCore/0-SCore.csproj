@@ -24,7 +24,8 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile></DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -178,6 +179,7 @@
     <Compile Include="Scripts\Buffs\RequirementEveryDawn.cs" />
     <Compile Include="Scripts\Buffs\RequirementEveryXDaySDX.cs" />
     <Compile Include="Scripts\Buffs\RequirementEveryXHourSDX.cs" />
+    <Compile Include="Scripts\Buffs\RequirementHoldingItemDurability.cs" />
     <Compile Include="Scripts\Buffs\RequirementIsBloodMoon.cs" />
     <Compile Include="Scripts\Buffs\RequirementIsOutdoor.cs" />
     <Compile Include="Scripts\Buffs\RequirementIsUnderground.cs" />
@@ -278,6 +280,7 @@
     <Compile Include="Scripts\Managers\SCoreQuestEventManager.cs" />
     <Compile Include="Scripts\Managers\WaterPipeManager.cs" />
     <Compile Include="Scripts\MinEvents\MinEventActionAddBuffByFactionSDX.cs" />
+    <Compile Include="Scripts\MinEvents\MinEventActionAddScriptToTransform.cs" />
     <Compile Include="Scripts\MinEvents\MinEventActionRecalculateEncumbrance.cs" />
     <Compile Include="Scripts\MinEvents\MinEventActionExecuteConsoleCommandCVars.cs" />
     <Compile Include="Scripts\MinEvents\MinEventActionSetDateToCVar.cs" />
@@ -345,6 +348,7 @@
     <Compile Include="Scripts\Quests\QuestActionGiveCVarBuffSDX.cs" />
     <Compile Include="Scripts\Quests\QuestActionPlaySound.cs" />
     <Compile Include="Scripts\Quests\QuestActionReplaceEntitySDX.cs" />
+    <Compile Include="Scripts\Quests\QuestActionSetRevengeTargetsSDX.cs" />
     <Compile Include="Scripts\Quests\QuestActionSpawnEntitySDX.cs" />
     <Compile Include="Scripts\Quests\QuestUtils.cs" />
     <Compile Include="Scripts\Quests\RewardGiveBuff.cs" />

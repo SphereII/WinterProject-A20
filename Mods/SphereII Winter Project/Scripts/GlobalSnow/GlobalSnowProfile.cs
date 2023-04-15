@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 
 namespace GlobalSnowEffect {
 
+    [CreateAssetMenu(menuName = "Global Snow Profile", fileName = "Global Snow Profile", order = 100)]
     public partial class GlobalSnowProfile : ScriptableObject {
 
         public float minimumAltitude = -10f;

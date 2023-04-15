@@ -3,7 +3,7 @@
     <append xpath="/buffs">
 
         <buff name="buffElementSheltered" name_key="buffElementShelteredName" description_key="buffElementShelteredDesc"
-            tooltip_key="buffElementShelteredTooltip" icon="ui_game_symbol_map_house" icon_color="164,192,128" icon_blink="true">
+             icon="ui_game_symbol_map_house" icon_color="164,192,128" icon_blink="true">
 
             <!-- <damage_type value="cold"/>  -->
             <stack_type value="ignore"/>

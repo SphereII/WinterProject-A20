@@ -10,13 +10,20 @@ The 0-SCore is the key component to enable extra functionality for 7 Days To Die
 
 
 [ Change Log ]
-Version:
+Version:  20.6.467.917
 
-	[ Lock Pick
+	[ Quests ]
+		- Merged khzmusik's new Quest Action.
+
+			This quest objective sets the revenge targets of all entities in range.
+
+			<action type="SetRevengeTargetsSDX" id="party" value="location" phase="2" />
+
+	[ Lock Pick ]
 		- Adjusted MaxGiveAmount to be 2 * the perk level
 
 	[ Music Boxes ]
-		- Reformatted
+		- Reformatted, and refactored
 
 	[ IsActive ]
 		- Fixed some issues with the TileEntity AlwaysActive

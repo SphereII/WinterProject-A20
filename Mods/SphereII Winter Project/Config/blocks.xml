@@ -90,7 +90,6 @@
     <set xpath="/blocks/block[@name='terrSnow']/property[@name='Texture']/@value">6</set>
     <append xpath="/blocks/block[@name='terrSnow']">
         <property name="PassThroughDamage" value="true"/>
-
     </append>
 
     <!-- This replaces all the blocks that start with tree, then we'll further adjust them later 

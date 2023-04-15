@@ -18,6 +18,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/0-SCore/Scripts/Blocks/BlockSnowSDX.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/0-SCore/Scripts/DataClasses/WaterData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/OcbStartupOptimizer/Harmony/StartupOptimizer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Samara/Scripts/SamaraWell.cs" root0="SKIP_HIGHLIGHTING" />
@@ -103,6 +104,10 @@
       <workItem from="1680777290858" duration="6614000" />
       <workItem from="1680878072198" duration="527000" />
       <workItem from="1680879062236" duration="8155000" />
+      <workItem from="1681297109999" duration="1379000" />
+      <workItem from="1681300676295" duration="1008000" />
+      <workItem from="1681326731946" duration="2043000" />
+      <workItem from="1681388953348" duration="40579000" />
     </task>
     <servers />
   </component>

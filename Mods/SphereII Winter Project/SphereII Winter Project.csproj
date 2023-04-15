@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SphereII_Winter_Project</RootNamespace>
-    <AssemblyName>SphereII Winter Project</AssemblyName>
+    <AssemblyName>SphereII_Winter_Project</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -59,6 +59,9 @@
       <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+	  <Reference Include="UnityEngine.VehiclesModule">
+	    <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+	  </Reference>
 	  <Reference Include="VehiclesModule">
       <HintPath>..\..\7DaysToDie_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
       <Private>False</Private>

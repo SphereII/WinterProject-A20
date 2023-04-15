@@ -21,5 +21,13 @@
         <item group="groupMusicBox" prob="0.06"/>
     </append>
 
-
+<append xpath="/lootcontainers">
+    <lootgroup name="questVideoPlayer">
+        <item name="VideoPlayer"/>
+        <item name="VideoPlayerTV"/>
+    </lootgroup>
+    <lootgroup name="questMusic">
+        <item name="Carousel"/>
+    </lootgroup>
+</append>
 </configs>

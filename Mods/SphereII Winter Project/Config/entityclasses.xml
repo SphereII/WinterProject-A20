@@ -6,7 +6,13 @@
     <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffFrostShield">
 	<requirement name="RequirementIsOutdoor, SCore"/>
 	</triggered_effect>
-	</effect_group> 
+	</effect_group>
+
+
+      <effect_group>
+          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" transform="RightFoot" script="GlobalSnowEffect.GlobalSnowCollisionDetector, SphereII_Winter_Project"/>
+          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" transform="LeftFoot" script="GlobalSnowEffect.GlobalSnowCollisionDetector, SphereII_Winter_Project"/>
+      </effect_group>
   </append> 
   
    <append xpath="/entity_classes/entity_class[starts-with(@name, 'zombieRegularTemplate')]" >

@@ -16,8 +16,14 @@ using UnityEngine;
 */
 public class SphereII_WinterProject
 {
+   
+    public static string modFolder;
+
     public class SphereIIWinterProjectInit : IModApi
     {
+        private GlobalSnow _globalSnow;
+        private EntityPlayerLocal _player;
+
         public void InitMod(Mod _modInstance)
         {
             Log.Out(" Loading Patch: " + GetType());
@@ -28,33 +34,82 @@ public class SphereII_WinterProject
 
             var harmony = new HarmonyLib.Harmony(GetType().ToString());
             harmony.PatchAll(Assembly.GetExecutingAssembly());
-        }
-    }
 
-    
-    [HarmonyPatch(typeof(GameManager))]
-    [HarmonyPatch("PlayerSpawnedInWorld")]
-    public class CloneCameraPlayer
-    {
-        public static void Postfix()
+            modFolder = _modInstance.ModInfo.Name.Value;
+            RegisterEvents();
+
+        }
+
+
+        private void RegisterEvents()
         {
-            var entityPlayer = GameManager.Instance.World.GetPrimaryPlayer();
-            if (entityPlayer == null) return;
-            var settings = entityPlayer.playerCamera.gameObject.GetOrAddComponent<GlobalSnow>();
-            settings.snowAmount = 0.70f;
-            settings.cameraFrost = false;
-            settings.groundCoverage = 0.45f;
-            //settings.footprints = true;
-            
-            //settings.groundCheck = GROUND_CHECK.RayCast;
-            //settings.characterController = entityPlayer.PhysicsTransform.GetComponent<CharacterController>();
-            //settings.footprintsObscurance = 0.3f;
-            //settings.footprintsScale = 10;
-
-
-
+            ModEvents.GameUpdate.RegisterHandler(UpdateSnow);
         }
+
+        private void InitGlobalSnow()
+        {
+            _player = GameManager.Instance.World.GetPrimaryPlayer();
+            
+            // Asset Bundles are defined in GlobalSnow.ReadFromModlet(), triggered from GlobalSnow.LoadResources.
+            _globalSnow = _player.playerCamera.gameObject.GetOrAddComponent<GlobalSnow>();
+
+            // Let the game handle the snow particles
+            _globalSnow.snowfall = true;
+
+            _globalSnow.snowAmount = 1f;
+           // Vanilla coverage value? Good enough?
+
+            // Let the game handle its own frost
+            _globalSnow.cameraFrost = false;
+
+            // cover the ground a bit more.
+            _globalSnow.groundCoverage = 0.45f;
+
+            // Foot prints will only appear at a certain depth of snow amount.
+            _globalSnow.footprints = true;
+            _globalSnow.groundCheck = GROUND_CHECK.CharacterController;
+            _globalSnow.characterController = _player.RootTransform.GetComponent<CharacterController>();
+            
+        }
+
+        private void UpdateSnow()
+        {
+            if (_globalSnow == null)
+                InitGlobalSnow();
+
+            // if (_globalSnow == null) return;
+            //
+            // // Give a bonus if we are in a snowy area, so we can layer everything in a fine dust.
+            // if (_player.biomeStandingOn?.m_SpectrumName == "snow")
+            //     _globalSnow.snowAmount += 0.5f;
+            
+        }
+
+        // [HarmonyPatch(typeof(GameManager))]
+        // [HarmonyPatch("PlayerSpawnedInWorld")]
+        // public class CloneCameraPlayer
+        // {
+        //     public static void Postfix()
+        //     {
+        //         var entityPlayer = GameManager.Instance.World.GetPrimaryPlayer();
+        //         if (entityPlayer == null) return;
+        //         var settings = entityPlayer.playerCamera.gameObject.GetOrAddComponent<GlobalSnow>();
+        //         settings.snowAmount = 0.70f;
+        //         settings.cameraFrost = false;
+        //         settings.groundCoverage = 0.45f;
+        //         //settings.footprints = true;
+        //
+        //         //settings.groundCheck = GROUND_CHECK.RayCast;
+        //         //settings.characterController = entityPlayer.PhysicsTransform.GetComponent<CharacterController>();
+        //         //settings.footprintsObscurance = 0.3f;
+        //         //settings.footprintsScale = 10;
+        //
+        //
+        //
+        //     }
+        // }
     }
+
     [HarmonyPatch(typeof(DynamicPrefabDecorator))]
     [HarmonyPatch("AddPrefab")]
     public class SphereII_DynamicPrefabDecorator
@@ -101,6 +156,46 @@ public class SphereII_WinterProject
 
     }
 
+    // [HarmonyPatch(typeof(PrefabInstance))]
+    // [HarmonyPatch("CopyIntoWorld")]
+    // public class SphereII_WinterProject_PrefabInstance_CopyIntoWorld
+    // {
+    //       
+    //     public static bool Prefix(PrefabInstance __instance, World _world, bool _CopyEntities, List<int> ___entityInstanceIds, QuestTags _tags = QuestTags.none)
+    //     {
+    //         if (_tags == QuestTags.none) return true;
+    //         Debug.Log("CopyInto World RPC");
+    //         if (__instance.lastCopiedRotation != __instance.rotation)
+    //         {
+    //             if (__instance.lastCopiedRotation < __instance.rotation)
+    //             {
+    //                 var rotCount = (int)(__instance.rotation - __instance.lastCopiedRotation);
+    //                 __instance.prefab.RotateY(false, rotCount);
+    //             }
+    //             else
+    //             {
+    //                 int rotCount2 = (int)(__instance.lastCopiedRotation - __instance.rotation);
+    //                 __instance.prefab.RotateY(true, rotCount2);
+    //             }
+    //             __instance.lastCopiedRotation = __instance.rotation;
+    //             __instance.UpdateBoundingBoxPosAndScale(__instance.boundingBoxPosition, __instance.prefab.size, true);
+    //         }
+    //         __instance.prefab.CopyIntoRPC(GameManager.Instance,__instance.boundingBoxPosition, true );
+    //         WinterProjectPrefab.SetSnowPrefab(__instance.prefab, _world.ChunkClusters[0], __instance.boundingBoxPosition, _tags);
+    //
+    //        // __instance.prefab.CopyIntoLocal(_world.ChunkClusters[0], this.boundingBoxPosition, _bOverwriteExistingBlocks, true, _tags);
+    //         if (_CopyEntities)
+    //         {
+    //             bool bSpawnEnemies = _world.IsEditor() || GameStats.GetBool(EnumGameStats.IsSpawnEnemies);
+    //             ___entityInstanceIds.Clear();
+    //             __instance.prefab.CopyEntitiesIntoWorld(_world, __instance.boundingBoxPosition, ___entityInstanceIds, bSpawnEnemies);
+    //         }
+    //         __instance.lastCopiedPrefabPosition = __instance.boundingBoxPosition;
+    //         __instance.bPrefabCopiedIntoWorld = true;
+    //
+    //         return false;
+    //     }
+    // }
 
     // Sinks the prefabs
     [HarmonyPatch(typeof(Prefab))]
@@ -121,6 +216,8 @@ public class SphereII_WinterProject
 
 
 
+    
+    // Biome Decorations
     [HarmonyPatch(typeof(PrefabInstance))]
     [HarmonyPatch("CopyIntoChunk")]
     public class SphereII_WinterProject_PrefabInstance_CopyIntoChunk
