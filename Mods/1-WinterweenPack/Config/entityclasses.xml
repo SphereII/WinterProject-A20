@@ -1,0 +1,56 @@
+<configs>
+
+	<append xpath="/entity_classes">
+                
+                <!--  Cardboard Fat Man model by Vladislav Chumak Free to use,
+                      Assault Character by BlocBros Studio Purchased for use in NPC Mod  -->
+
+		<entity_class name="npcCardboardBuddy" extends="npcAdvancedClubTemplate"> 
+			<property name="Tags" value="UMA2,entity,male,npc,melee"/>
+			<property name="Faction" value="whiteriver"/>
+                        <property name="LookAtAngle" value="0"/> 
+			<property name="Names" value="Guppy,Barney,Wally,George,John Smith,Gump,Pile,Murray" />			
+			<property name="Mesh" value="#@modfolder:Resources/WinterweenPack.unity3d?CardboardSurvivorDark"/> 
+                        <property name="ItemsOnEnterGame.GameModeSurvival" value="CardboardHammer"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="CardboardHammer"/>
+			<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="CardboardHammer"/> 
+                <effect_group name="Base Effects">
+		        <passive_effect name="HealthMax" operation="base_set" value="300"/>
+		        <passive_effect name="PhysicalDamageResist" operation="base_set" value="40"/>
+	        </effect_group>
+		</entity_class>
+
+              
+		 <entity_class name="WinterSoldierTRifle" extends="npcTRifleTemplate"> 
+			<property name="Tags" value="UMA2,entity,male,npc,bandit,ranged"/>
+			<property name="Faction" value="bandits"/>
+                        <property name="LookAtAngle" value="0"/> 
+			<property name="Names" value="King Moneybags,Colby Bullseye,Prince Scarface,Poison Rhett,Action Priestly,Aron the Pillager,
+                         Rusty Redman,Barkley Black Eye,Rober the Bull,Bulletproof Allen,Mad Watkins,Farley Grin,Wallis the Bandit,Cliff Muscles,
+                         Squinty Thorne,Sly Bert,Mad Dog" />	
+			<property name="Mesh" value="#@modfolder:Resources/WinterweenPack.unity3d?WinterSoldierDark"/> 
+                        <property name="ExperienceGain" value="800"/> 
+			<property name="LootDropProb" value="0.2"/> 
+			<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
+		</entity_class>	
+
+             
+
+		<entity_class name="WinterSoldierClub" extends="npcClubTemplate"> 
+			<property name="Tags" value="UMA2,entity,male,npc,bandit,melee"/>
+			<property name="Faction" value="bandits"/>
+                        <property name="LookAtAngle" value="0"/> 
+                        <property name="Names" value="King Moneybags,Colby Bullseye,Prince Scarface,Poison Rhett,Action Priestly,Aron the Pillager,
+                         Rusty Redman,Barkley Black Eye,Rober the Bull,Bulletproof Allen,Mad Watkins,Farley Grin,Wallis the Bandit,Cliff Muscles,
+                         Squinty Thorne,Sly Bert,Mad Dog" />			
+			<property name="Mesh" value="#@modfolder:Resources/WinterweenPack.unity3d?WinterSoldierDark"/> 
+                        <property name="ExperienceGain" value="800"/> 
+			<property name="LootDropProb" value="0.2"/> 
+			<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
+                         
+		</entity_class>
+
+               
+		</append>	
+	
+</configs>

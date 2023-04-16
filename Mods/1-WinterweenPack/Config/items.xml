@@ -1,0 +1,101 @@
+<configs>
+	<append xpath="/items">
+	
+		<item name="NPCWinterweenLoadHack01">
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="missingIcon"/><property name="CustomIconTint" value="90ff90"/>
+			<property name="HoldType" value="45"/>
+			<property name="HoldingItemHidden" value="true"/>
+			<property name="Meshfile" value="#@modfolder:Resources/WinterweenPack.unity3d?npcCardboardBuddy"/>
+			<property name="DropMeshfile"  value="#@modfolder:Resources/WinterweenPack.unity3d?npcCardboardBuddy"/>
+			<property name="Material" value="MresourceScrapIron"/>
+			<property name="Weight" value="1"/>
+			<property name="Stacknumber" value="1"/> <!-- STK resource -->
+			<property name="EconomicValue" value="1"/>
+			<property name="EconomicBundleSize" value="1000"/>
+			<property name="Group" value="Resources"/>
+		</item>
+
+                <item name="CardboardHammer"> 
+			<property name="Extends" value="meleeHandNPCMaster"/>
+			<property name="Canhold" value="true"/> 
+			<property name="HoldType" value="36"/>
+			<property name="Tags" value="blunt,club,melee,grunting,light,longShaft,perkFlurryOfBlows,weapon,meleeWeapon,attStrength,perkPummelPete,canHaveCosmetic"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="DisplayType" value="melee"/>
+			<property name="Group" value="Ammo/Weapons,Basics"/>
+			<property name="Meshfile" value="#Other/Items?Weapons/Melee/ClubWood/ClubWoodPrefab.prefab"/>
+			<property name="Candrop" value="false"/>
+			<property name="Material" value="Mwood"/>
+			<property name="RepairTools" value="resourceWood"/>
+			<property name="SoundDestroy" value="wooddestroy1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="EconomicValue" value="1"/>
+			<property name="FuelValue" value="25"/>
+			<property name="CustomIcon" value="meleeClubWood"/>
+			<property name="DegradationBreaksAfter" value="false"/>
+			<property name="ShowQuality" value="false"/>
+			
+			<property class="Action0">
+				<property name="Class" value="MeleeSDX, SCore"/>
+				<property name="Delay" value=".8" /> 
+				<property name="Range" value="1.65" />
+				<property name="Sphere" value="1.2"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Block_range" value="1.65"/>
+				<property name="DamageEntity" value="25"/>
+				<property name="DamageBlock" value="50"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+			</property> 
+			<property class="Action1">
+				<property name="Class" value="MeleeSDX, SCore"/>
+				<property name="Delay" value=".8" /> 
+				<property name="Range" value="1.65" />
+				<property name="Sphere" value="1.2"/>
+				<property name="Sound_start" value="swoosh"/>
+				<property name="Block_range" value="1.65"/>
+				<property name="DamageEntity" value="40"/>
+				<property name="DamageBlock" value="50"/>
+				<property class="HitSounds">
+					<property name="Override0" value="organic" param1="woodhitorganic"/>
+				</property>
+			</property> 
+				
+				<effect_group name="meleeWpnClubT0WoodenClub">
+					<passive_effect name="EntityDamage" operation="base_add" value="10" tags="perkPummelPete"/> <!-- base_add adds to the indexX damage property, base_set replaces it  -->
+					<passive_effect name="BlockDamage" operation="base_add" value="10.6" tags="perkPummelPete"/>
+					<passive_effect name="AttacksPerMinute" operation="base_set" value="55" tags="perkPummelPete,perkFlurryOfBlows"/>
+					<passive_effect name="StaminaLoss" operation="base_set" value="17.4" tags="primary"/>
+					<passive_effect name="DegradationMax" operation="base_set" value="60,110" tier="1,6" tags="perkPummelPete"/>
+					<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkPummelPete"/>
+					<passive_effect name="MaxRange" operation="base_set" value="2.4" tags="perkPummelPete"/>
+					<passive_effect name="BlockRange" operation="base_set" value="1.65" tags="perkPummelPete"/>
+
+					<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
+					<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+					<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+
+					<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/> <!-- tier bonus -->
+					<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkPummelPete"/> <!-- tier bonus -->
+
+					<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="earth"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="stone"/>
+					<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="metal"/>
+
+					<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allHarvest"/>
+					<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="allToolsHarvest"/>
+					<passive_effect name="HarvestCount" operation="base_add" value="-.75" tags="oreWoodHarvest"/>
+				</effect_group>
+				<effect_group name="Power Attack">
+					<passive_effect name="EntityDamage" operation="perc_add" value="1" tags="secondary"/>
+					<passive_effect name="BlockDamage" operation="perc_add" value="1" tags="secondary"/>
+					<passive_effect name="StaminaLoss" operation="base_set" value="26.1" tags="secondary"/>
+				</effect_group>
+                       <property name="HoldingItemHidden" value="true"/>
+		</item>
+
+	</append>
+</configs>
