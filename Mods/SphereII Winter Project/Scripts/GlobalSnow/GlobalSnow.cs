@@ -1820,6 +1820,7 @@ namespace GlobalSnowEffect
                 forceForwardRenderingPath = true;
             }
 
+            
          
         }
 

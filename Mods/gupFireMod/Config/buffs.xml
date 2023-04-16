@@ -31,7 +31,6 @@
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="guppyBurningDuration" operation="add" value="-1"/>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="guppyBurningDuration" operation="set" value="0"/>
 		</effect_group>
-		
 		<effect_group>
 			<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,8,14,18" value="1,5,11,13">
 				<requirement name="EntityTagCompare" tags="player"/>
@@ -47,7 +46,11 @@
 
 			<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,8,14,18" value="1,5,11,13">
 				<requirement name="EntityTagCompare" tags="zombie"/>
-			</passive_effect>			
+			</passive_effect>	
+
+			<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,8,14,18" value="1,5,11,13">
+				<requirement name="EntityTagCompare" tags="npc"/>
+			</passive_effect>
 
 			<passive_effect name="WaterChangeOT" operation="base_subtract" value="1.5"/>
 			<passive_effect name="HypothermalResist" operation="base_add" value="35"/>
@@ -195,6 +198,122 @@
 </append>
 <append xpath="/buffs/buff[@name='buffStatusCheck01']/effect_group/triggered_effect[@action='AttachParticleEffectToEntity']">
         <requirement name="HasBuff" buff="guppyIsOnFire"/>		
+</append>
+
+<append xpath="/buffs/buff[@name='buffIsOnFire']">
+		<effect_group>
+				<requirement name="!CVarCompare" cvar="alreadyBurned" operation="Equals" value="1"/>
+				<requirement name="!EntityTagCompare" tags="vulture"/>				
+				<requirement name="!EntityTagCompare" tags="wolf"/>			
+				<requirement name="!EntityTagCompare" tags="rabbit"/>			
+				<requirement name="!EntityTagCompare" tags="chicken"/>			
+				<requirement name="!EntityTagCompare" tags="board"/>	
+				<requirement name="!EntityTagCompare" tags="dog"/>			
+				<requirement name="!EntityTagCompare" tags="bear"/>	
+				<requirement name="!EntityTagCompare" tags="snake"/>
+				<requirement name="!EntityTagCompare" tags="deer"/>	
+				<requirement name="!EntityTagCompare" tags="coyote"/>
+				<requirement name="!EntityTagCompare" tags="mountainlion"/>					
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverridezombieBurnt" operation="set" value="1">
+				<requirement name="!CVarCompare" cvar="alreadyBurned" operation="Equals" value="1"/>
+			</triggered_effect>
+		</effect_group>
+</append>
+
+<append xpath="/buffs/buff[@name='zombieBuffStatusCheck01']">
+	<effect_group>
+		<requirement name="!CVarCompare" cvar="alreadyBurned" operation="Equals" value="1"/>
+		<requirement name="!EntityTagCompare" tags="vulture"/>				
+		<requirement name="!EntityTagCompare" tags="wolf"/>			
+		<requirement name="!EntityTagCompare" tags="rabbit"/>			
+		<requirement name="!EntityTagCompare" tags="chicken"/>			
+		<requirement name="!EntityTagCompare" tags="board"/>	
+		<requirement name="!EntityTagCompare" tags="dog"/>			
+		<requirement name="!EntityTagCompare" tags="bear"/>	
+		<requirement name="!EntityTagCompare" tags="snake"/>
+		<requirement name="!EntityTagCompare" tags="deer"/>		
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="NoSpawnOnDeath" operation="set" value="1">
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>	
+		</triggered_effect>	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="NoSpawnOnDeath" operation="set" value="1">
+			<requirement name="!HasBuff" buff="buffIsOnFire"/>	
+		</triggered_effect>	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="NoSpawnOnDeath" operation="set" value="0">
+			<requirement name="HasBuff" buff="guppyIsOnFire"/>	
+		</triggered_effect>
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="NoSpawnOnDeath" operation="set" value="0">
+			<requirement name="HasBuff" buff="buffIsOnFire"/>
+		</triggered_effect>	
+	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverridezombieBurnt" operation="set" value="0">
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="!HasBuff" buff="buffIsOnFire"/>
+		</triggered_effect>	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverridezombieBurnt" operation="set" value="1">
+			<requirement name="HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="HasBuff" buff="buffIsOnFire"/>
+		</triggered_effect>
+		
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverrideguppyVultureBurnt" operation="set" value="0">
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="!HasBuff" buff="buffIsOnFire"/>
+			<property name="Tags" value="vulture"/>			
+		</triggered_effect>	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverrideguppyVultureBurnt" operation="set" value="1">
+			<requirement name="HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="HasBuff" buff="buffIsOnFire"/>
+			<property name="Tags" value="vulture"/>			
+		</triggered_effect>	
+<!--
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverridezombieDog" operation="set" value="0">
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="!HasBuff" buff="buffIsOnFire"/>
+			<property name="Tags" value="dog"/>			
+		</triggered_effect>	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverridezombieDog" operation="set" value="1">
+			<requirement name="HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="HasBuff" buff="buffIsOnFire"/>
+			<property name="Tags" value="dog"/>			
+		</triggered_effect>
+
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverridezombieDog" operation="set" value="0">
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="!HasBuff" buff="buffIsOnFire"/>
+			<property name="Tags" value="wolf"/>			
+		</triggered_effect>	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverridezombieDog" operation="set" value="1">
+			<requirement name="HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="HasBuff" buff="buffIsOnFire"/>
+			<property name="Tags" value="wolf"/>			
+		</triggered_effect>	
+-->		
+	</effect_group>
+</append>
+
+<append xpath="/buffs/buff[@name='buffStatusCheck01']">
+	<effect_group>
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="NoSpawnOnDeath" operation="set" value="1">
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>	
+		</triggered_effect>	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="NoSpawnOnDeath" operation="set" value="1">
+			<requirement name="!HasBuff" buff="buffIsOnFire"/>	
+		</triggered_effect>	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="NoSpawnOnDeath" operation="set" value="0">
+			<requirement name="HasBuff" buff="guppyIsOnFire"/>	
+		</triggered_effect>
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="NoSpawnOnDeath" operation="set" value="0">
+			<requirement name="HasBuff" buff="buffIsOnFire"/>
+		</triggered_effect>	
+	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverridezombieBurnt" operation="set" value="0">
+			<requirement name="!HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="!HasBuff" buff="buffIsOnFire"/>	
+		</triggered_effect>	
+		<triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" target="self" cvar="spawnOverridezombieBurnt" operation="set" value="1">
+			<requirement name="HasBuff" buff="guppyIsOnFire"/>	
+			<requirement name="HasBuff" buff="buffIsOnFire"/>	
+		</triggered_effect>
+	</effect_group>
 </append>
 
 </configs>

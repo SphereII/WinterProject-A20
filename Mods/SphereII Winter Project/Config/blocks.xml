@@ -27,7 +27,6 @@
     </append>
 
     <remove xpath="/blocks/block[@name='treePlant02']"/>
-
  
     <remove xpath="/blocks/block[@name='terrIce']"/>
     <insertAfter xpath="/blocks/block[@name='terrSnow']">

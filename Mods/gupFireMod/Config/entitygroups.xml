@@ -1,39 +1,49 @@
 <configs>
 
 	<append xpath="entitygroups/entitygroup[@name='ZombiesNight']">
-				<entity name="guppyLightning" prob=".05"/>
+			<entity name="guppyLightning" prob=".05"/>
 	</append>
 
 	<append xpath="entitygroups/entitygroup[@name='ZombiesForestDowntownNight']">
-				<entity name="guppyLightning" prob=".05"/>
+			<entity name="guppyLightning" prob=".05"/>
 	</append>
 
 	<append xpath="entitygroups/entitygroup[@name='ZombiesWastelandNight']">
-				<entity name="guppyLightning" prob=".05"/>
+			<entity name="guppyLightning" prob=".05"/>
 	</append>
 
 	<append xpath="entitygroups/entitygroup[@name='ZombiesWastelandNightNoBears']">
-				<entity name="guppyLightning" prob=".05"/>
+			<entity name="guppyLightning" prob=".05"/>
 	</append>
 
 	<append xpath="entitygroups/entitygroup[@name='ZombiesWastelandNight2']">
-				<entity name="guppyLightning" prob=".05"/>
+			<entity name="guppyLightning" prob=".05"/>
 	</append>
 
 	<append xpath="entitygroups/entitygroup[@name='ZombiesWastelandNight2NoBears']">
-				<entity name="guppyLightning" prob=".05"/>
+			<entity name="guppyLightning" prob=".05"/>
 	</append>
 
 	<append xpath="entitygroups/entitygroup[@name='ZombiesHoard']">
-				<entity name="guppyLightning" prob=".05"/>
+			<entity name="guppyLightning" prob=".05"/>
 	</append>
 
 	<append xpath="entitygroups/entitygroup[@name='ZombiesBurntForest']">
-				<entity name="guppyLightning" prob=".1"/>
+			<entity name="guppyLightning" prob=".1"/>
 	</append>	
 	
 	<append xpath="entitygroups/entitygroup[@name='ZombiesBurntForest']">
-				<entity name="guppyFireNado" prob=".05"/>
+			<entity name="guppyFireNado" prob=".05"/>
 	</append>	
+	
+	<append xpath="/entitygroups">
+		<entitygroup name="SpawnNothing">
+			<entity name="none" />
+		</entitygroup>
+		
+		<entitygroup name="guppyVultureBurnt">
+			<entity name="guppyVultureBurnt" />
+		</entitygroup>
+	</append>
 
 </configs>

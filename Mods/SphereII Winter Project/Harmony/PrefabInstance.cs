@@ -224,10 +224,30 @@ public class SphereII_WinterProject
     {
         public static void Postfix(PrefabInstance __instance, Chunk _chunk)
         {
+
             if (!__instance.prefab.FileNameNoExtension.Contains("trader_hugh"))
                 WinterProjectPrefab.SetSnowChunk(_chunk, __instance.boundingBoxPosition, __instance.boundingBoxSize);
         }
     }
 
+
+    // Rally Flag is too high for buried supplies, and other Create-type quests.
+    // This is due to the offset on the flag marker.
+    [HarmonyPatch(typeof(ObjectiveRallyPoint))]
+    [HarmonyPatch("HandleRallyPoint")]
+    public class SphereII_WinterProject_ObjectiveRallyPoint_HandleRallyPoint
+    {
+        public static void Postfix(ObjectiveRallyPoint __instance, Vector3i ___rallyPos, ObjectiveRallyPoint.RallyStartTypes ___RallyStartType)
+        {
+            if (___RallyStartType == ObjectiveRallyPoint.RallyStartTypes.Find) return;
+            
+            var blockValue = Block.GetBlockValue("questRallyMarker", false);
+            var position = ___rallyPos;
+            position.y -= 7;
+            GameManager.Instance.World.SetBlockRPC(position, blockValue, sbyte.MaxValue);
+            __instance.OwnerQuest.SetPositionData(Quest.PositionDataTypes.Activate, position);
+
+        }
+    }
 
 }

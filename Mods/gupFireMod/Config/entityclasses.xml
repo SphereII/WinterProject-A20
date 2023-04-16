@@ -69,20 +69,109 @@
 				<passive_effect name="HealthMax" operation="base_set" value="33"/>
 				<passive_effect name="HealthMax" operation="perc_add" value="0"/>
 			</effect_group>
-		</entity_class>			
+		</entity_class>		
 
+		<entity_class name="guppyVultureBurnt" extends="zombieTemplateMale">
+            <property name="HideInSpawnMenu" value="false"/>    
+            <property name="SizeScale" value=".5"/> 
+			<property name="Tags" value="entity,animal,zombie,hostile,vulture,UMA2"/>
+            <property name="HasRagdoll" value="true"/>
+            <property name="HasDeathAnim" value="true"/>
+            <property name="RootMotion" value="true"/>
+            <property name="IsEnemyEntity" value="true"/>             
+            <property name="AvatarController" value="AvatarAnimalController"/> 
+            <property name="Mesh" value="#@modfolder:Resources/a20burntvulture.unity3d?gupBurnedVultureHumanoid"/>
+            <property name="ExperienceGain" value="300"/>
+            <property name="DeadBodyHitPoints" value="200"/>
+			<property name="PhysicsBody" value="gupVultureStandard"/>
+            <property name="Mass" value="35"/>
+            <property name="Weight" value="80"/>            
+            <property name="HandItem" value="meleeHandgupBurntVulture"/>
+			<property name="SoundRandom" value="Animals/Vulture/vultureroam"/>
+			<property name="SoundAlert" value="Animals/Vulture/vulturealert"/>
+			<property name="SoundHurt" value="Animals/Vulture/vulturepain"/>
+			<property name="SoundDeath" value="Animals/Vulture/vulturedeath"/>
+			<property name="SoundAttack" value="Animals/Vulture/vultureattack"/>
+			<property name="SoundSense" value="Animals/Vulture/vulturesense"/>
+			<property name="SoundGiveUp" value="Animals/Vulture/vulturegiveup"/>	
+			<property name="AIFeralSense" value=".1"/> 
+			<property name="WalkType" value="7"/>			
+			<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityNPC,20"/>
+			<property name="AITask-2" value="ApproachSpot"/>
+			<property name="AITask-3" value="Look"/>
+			<property name="AITask-4" value="Wander"/>
+			<property name="AITask-5" value=""/>
+			<property name="AITarget-1" value="SetAsTargetIfHurt" data="class=EntityNPC,EntityPlayer"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/>
+			<property name="AITarget-3" value="SetNearestCorpseAsTarget" data="class=EntityPlayer"/>
+			<property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,22,20,EntityNPC,0,0"/>
+			<property name="AITarget-5" value=""/>			
+            <property name="MaxViewAngle" value="360"/>
+			<property name="LookAtAngle" value="0"/>
+            <property name="MoveSpeed" value=".28"/>
+            <property name="MoveSpeedAggro" value="1.25, 1.25"/> 
+            <property name="MoveSpeedPanic" value="1.5"/>
+			<property name="ParticleOnDeath" value="blood_death"/>
+			<property name="RotateToGround" value="true"/>
+			
+ 
+			<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="4"/>
+			<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
+			<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+			<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="130"/>
+			</effect_group>  
+        </entity_class> 	
 	</append>
 	
 	<append xpath="/entity_classes/entity_class[@name='zombieBurnt']">
 		<property name="Buffs" value="buffGupQuickFireEffectOnly"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="alreadyBurned" operation="set" value="1"/>
+		</effect_group>
 	</append>
 	
-	<!--<append xpath="/entity_classes/entity_class[not(contains(@name, 'zombieBurnt'))]">
-		<property name="SpawnOnDeath" value="zombieBurnt" />
-	</append> -->
+	<append xpath="/entity_classes/entity_class[@name='guppyVultureBurnt']">
+		<property name="Buffs" value="buffGupQuickFireEffectOnly"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="alreadyBurned" operation="set" value="1"/>
+		</effect_group>
+	</append>
 	
-	<!--<set xpath="//entity_class[contains(@name, 'Forest') and not (contains(@name, 'Feral')) and not(contains(@name, 'Radiated')) and not (contains(@name, 'SuperRadiated'))]/property[@name='HandItem']/@value">meleeHandForestBoe</set> -->
+	<append xpath="/entity_classes/entity_class[@name='animalZombieVulture']">
+		<effect_group>
+			<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="spawnOverrideguppyVultureBurnt" operation="set" value="1"/>
+		</effect_group>
+	</append>	
+	
+	<!--
+	<append xpath="/entity_classes/entity_class[not(contains(@name, 'zombieBurnt')) 
+					and not(contains(@name, 'twitch')) 
+					and not (contains(@name, 'radiated')) 
+					and not(contains(@name, 'animal')) 
+					and not(contains(@name, 'vehicle')) 
+					and not(contains(@name, 'loot')) 
+					and not(contains(@name, 'junk')) 
+					and not(contains(@name, 'fat'))
+					and not(contains(@name, 'mutated'))]">
+		<property name="SpawnOnDeath" value="SpawnNothing" />
+	</append>
+	-->
+	
+	<!-- Turns on SpawnOnDeath property while having the default value spawn nothing.  This allows for the CVar spawn on death to work.  -->
+	<append xpath="/entity_classes/entity_class">
+		<property name="SpawnOnDeath" value="SpawnNothing" />
+	</append>
+	
+	<remove xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='SpawnOnDeath']"/>
+	<remove xpath="/entity_classes/entity_class[@name='playerNewMale']/property[@name='SpawnOnDeath']"/>	
+	<remove xpath="/entity_classes/entity_class[@name='zombieDemolition']/property[@name='SpawnOnDeath']"/>	
+	<remove xpath="/entity_classes/entity_class[@name='supplyPlane']/property[@name='SpawnOnDeath']"/>	
+	<remove xpath="/entity_classes/entity_class[@name='sc_General']/property[@name='SpawnOnDeath']"/>
+	<remove xpath="/entity_classes/entity_class[@name='Backpack']/property[@name='SpawnOnDeath']"/>
 
-	<!--<remove xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='SpawnOnDeath']"/> -->
 	
 </configs>

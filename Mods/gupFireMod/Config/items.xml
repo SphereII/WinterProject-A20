@@ -368,9 +368,30 @@
 				<passive_effect name="DegradationPerUse" operation="base_set" value="1" />
 				<passive_effect name="ModSlots" operation="base_set" value="0" />
 			</effect_group>
-		</item>			
-	</append>
-	
+		</item>		
+		
+		<item name="meleeHandgupBurntVulture">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".7"/> <!-- obsolete if rounds per minute exists -->
+				<property name="DamageEntity" value="8"/>
+				<property name="DamageBlock" value="8"/>
+			</property>
+			<effect_group name="meleeHandAnimalZombieVulture" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.05,.29,.36,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="20"><!--InfectionRadiated-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
+			</effect_group>
+		</item>
+		
+	</append>		
+	<!--
 	<append xpath="/items/item[@name='drinkJarRiverWater']">
 		<property class="Action1">
 			<property name="Class" value="Eat"/>
@@ -378,7 +399,7 @@
 			<property name="Sound_start" value="player_drinking"/>
 			<property name="Create_item" value="drinkJarEmpty"/>
 		</property>		
-		<effect_group>
+		<effect_group tiered="false">
 			<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" buff="buffWaterSplash" tags="secondary">
 				<requirement name="!HoldingItemBroken"/>
 			</triggered_effect>				
@@ -392,11 +413,15 @@
 			<property name="Sound_start" value="player_drinking"/>
 			<property name="Create_item" value="drinkJarEmpty"/>
 		</property>		
-		<effect_group>
+		<effect_group tiered="false">
 			<triggered_effect trigger="onSelfSecondaryActionEnd" action="AddBuff" buff="buffWaterSplash" tags="secondary">
 				<requirement name="!HoldingItemBroken"/>
 			</triggered_effect>				
 		</effect_group>		
 	</append>	
+	-->
+	<append xpath="/items/item[(contains(@name, 'Vomit'))]/property[@class='Action1']">	
+		<property name="Explosion.BlockDamage" value="0"/>
+	</append>
 	
 </configs>
