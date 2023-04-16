@@ -57,7 +57,8 @@
       <property name="HasRagdoll" value="true" />
       <property name="Mesh" value="#@modfolder:Resources/Abominable.unity3d?Abominable_X" />
       <property name="Tags" value="zombie,walker,feral"/>
-      <property name="Class" value="EntityZombie"/>
+      <property name="Class" value="EntityZombie"/> 
+	  <!--<property name="Class" value="EntityZombieCop"/> -->
       <property name="HandItem" value="handZombieAbominable"/>
       <property name="RightHandJointName" value="Muzzle" />
       <property name="MoveSpeed" value="0.2"/>
@@ -73,7 +74,8 @@
       <property name="CanClimbLadders" value="false"/>
       <property name="PhysicsBody" value="zombieFat"/>
       <property name="HasDeathAnim" value="true"/>
-      <property name="SightRange" value="50"/>
+	  <property name="MaxViewAngle" value="270"/>
+      <property name="SightRange" value="80"/>
       <property name="AITask-1" value="BreakBlock"/>
       <property name="AITask-2" value="RangedAttackTarget" data="itemType=1;cooldown=4;duration=5"/>
       <property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityNPC,0,EntityEnemyAnimal,0,EntityPlayer,0"/>
@@ -86,7 +88,6 @@
       <property name="AITarget-3" value="SetNearestCorpseAsTarget" data="class=EntityPlayer"/>
       <property name="AITarget-4" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0,EntityNPC,0,0"/>
       <property name="AITarget-5" value=""/>
-      <property name="SightRange" value="80"/>
       <property name="SoundRandomTime" value="60.0"/>
       <property name="SoundRandom" value="AbominableRandom" />
       <property name="SoundAlert" value="AbominableAlert" />
@@ -95,20 +96,19 @@
       <property name="SoundHurt" value="AbominableHurt" />
       <property name="SoundSense" value="AbominableSense" />
       <effect_group name="Base Effects">
-        <passive_effect name="HealthMax" operation="base_set" value="1000"/>
+        <passive_effect name="HealthMax" operation="base_set" value="800"/>
         <passive_effect name="HealthMax" operation="perc_set" value="1"/>
         <!-- Zombie HP scale -->
         <passive_effect name="EntityDamage" operation="perc_add" value="0"/>
         <!-- Feral damage -->
-        <passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
-        <passive_effect name="HealthChangeOT" operation="base_set" value="1.4"/>
+        <passive_effect name="PhysicalDamageResist" operation="base_set" value="5"/>
+        <passive_effect name="HealthChangeOT" operation="base_set" value=".4"/>
         <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
       </effect_group>
     </entity_class>
     <entity_class name="Snowman" extends="zombieTemplateMale">
       <!-- Snowman by junaidamin is licensed under CC Attribution -->
-      <!-- <property name="AvatarController" value="MecanimSDX, SCore" /> -->
-	  <property name="AvatarController" value="AvatarAnimalController"/> 	
+ 	  <property name="AvatarController" value="AvatarAnimalController"/> 	
 	  <property name="Faction" value="undead"/>
       <property name="EntityActiveWhen" value="night" />
       <property name="RootMotion" value="false" />
@@ -122,7 +122,8 @@
       <property name="CanClimbLadders" value="false"/>
       <property name="PhysicsBody" value="zombieFat"/>
       <property name="HasDeathAnim" value="true"/>
-      <property name="SightRange" value="50"/>
+	  <property name="MaxViewAngle" value="270"/>
+      <property name="SightRange" value="80"/>
       <property name="AITask-1" value="BreakBlock"/>
       <property name="AITask-2" value="RangedAttackTarget" data="itemType=1;cooldown=4;duration=5"/>
       <property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityNPC,0,EntityEnemyAnimal,0,EntityPlayer,0"/>
@@ -147,7 +148,7 @@
         <!-- Zombie HP scale -->
         <passive_effect name="EntityDamage" operation="perc_add" value="0"/>
         <!-- Feral damage -->
-        <passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+        <passive_effect name="PhysicalDamageResist" operation="base_set" value="5"/>
         <passive_effect name="HealthChangeOT" operation="base_set" value="1.1"/>
         <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
       </effect_group>
@@ -157,7 +158,6 @@
     </entity_class>
     <entity_class name="Snowcop" extends="zombieTemplateMale">
       <!-- Snowman by junaidamin is licensed under CC Attribution -->
-     <!-- <property name="AvatarController" value="MecanimSDX, SCore" /> -->
 	  <property name="AvatarController" value="AvatarAnimalController"/> 
       <property name="EntityActiveWhen" value="night" />
 	  <property name="Faction" value="undead"/>
@@ -172,7 +172,8 @@
       <property name="CanClimbLadders" value="false"/>
       <property name="PhysicsBody" value="zombieFat"/>
       <property name="HasDeathAnim" value="true"/>
-      <property name="SightRange" value="50"/>
+      <property name="SightRange" value="80"/>
+	  <property name="MaxViewAngle" value="270"/>
       <property name="AITask-1" value="BreakBlock"/>
       <property name="AITask-2" value="RangedAttackTarget" data="itemType=1;cooldown=4;duration=5"/>
       <property name="AITask-3" value="ApproachAndAttackTarget" data="class=EntityNPC,0,EntityEnemyAnimal,0,EntityPlayer,0"/>
@@ -210,7 +211,7 @@
         <!-- Zombie HP scale -->
         <passive_effect name="EntityDamage" operation="perc_add" value="0"/>
         <!-- Feral damage -->
-        <passive_effect name="PhysicalDamageResist" operation="base_set" value="10"/>
+        <passive_effect name="PhysicalDamageResist" operation="base_set" value="5"/>
         <passive_effect name="HealthChangeOT" operation="base_set" value="1.2"/>
         <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
       </effect_group>
@@ -229,7 +230,6 @@
       <property name="Parent" value="Enemies"/>
       <property name="PhysicsBody" value="snake"/>
       <property name="Faction" value="undead"/>
-      <property name="AttackAnimations" value="Attack0" />
       <property name="Mass" value="30"/>
       <property name="Weight" value="70"/>
       <property name="Faction" value="undead"/>
