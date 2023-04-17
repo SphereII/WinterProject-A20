@@ -10,11 +10,18 @@
 
 
       <effect_group>
-          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" transform="RightFoot" script="GlobalSnowEffect.GlobalSnowCollisionDetector, SphereII_Winter_Project"/>
-          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" transform="LeftFoot" script="GlobalSnowEffect.GlobalSnowCollisionDetector, SphereII_Winter_Project"/>
+          <!--
+          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" transform="RightFoot" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
+          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" transform="LeftRoot" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
+   -->
+          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
+               
+          
       </effect_group>
-  </append> 
-  
+  </append>
+
+       
+    
    <append xpath="/entity_classes/entity_class[starts-with(@name, 'zombieRegularTemplate')]" >
 	<effect_group name="frostshield">
     <triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="buffFrostShield">

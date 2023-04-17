@@ -151,6 +151,7 @@
     <Compile Include="Scripts\GlobalSnow\GlobalSnow.ShaderParams.cs" />
     <Compile Include="Scripts\GlobalSnow\GlobalSnowColliderExtraInfo.cs" />
     <Compile Include="Scripts\GlobalSnow\GlobalSnowCollisionDetector.cs" />
+    <Compile Include="Scripts\GlobalSnow\GlobalSnowCollisionDetectorFootPrints.cs" />
     <Compile Include="Scripts\GlobalSnow\GlobalSnowIgnoreCoverage.cs" />
     <Compile Include="Scripts\GlobalSnow\GlobalSnowImageEffect.cs" />
     <Compile Include="Scripts\GlobalSnow\GlobalSnowLerp.cs" />

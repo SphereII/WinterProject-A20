@@ -55,9 +55,8 @@ public class SphereII_WinterProject
 
             // Let the game handle the snow particles
             _globalSnow.snowfall = true;
-
+            
             _globalSnow.snowAmount = 1f;
-           // Vanilla coverage value? Good enough?
 
             // Let the game handle its own frost
             _globalSnow.cameraFrost = false;
@@ -65,6 +64,8 @@ public class SphereII_WinterProject
             // cover the ground a bit more.
             _globalSnow.groundCoverage = 0.45f;
 
+            _globalSnow.slopeThreshold = 0.9f;
+            
             // Foot prints will only appear at a certain depth of snow amount.
             _globalSnow.footprints = true;
             _globalSnow.groundCheck = GROUND_CHECK.CharacterController;

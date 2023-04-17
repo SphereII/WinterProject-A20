@@ -3077,6 +3077,7 @@
 			<property name="SoundSense" value="HarleySense"/>
 			<property name="LootDropProb" value="0.2"/> 
 			<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
+			
 		</entity_class>	
 		
 		<entity_class name="npcHarleyBMEmptyHand" extends="npcHarleyEmptyHand"> <!--  example of a bloodmoon version  -->

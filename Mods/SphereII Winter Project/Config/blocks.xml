@@ -487,4 +487,10 @@
     
         
     </append>
+    
+    <append xpath="//block[property[@name='Material' and @value='Mglass']]">
+        <property class="AttachScriptToTransform">
+            <property name="temp" value="AddSnowToGlass" />
+        </property>
+    </append>
 </configs>

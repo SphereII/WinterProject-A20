@@ -1791,7 +1791,8 @@ namespace GlobalSnowEffect
 
             snowShader = DataLoader.LoadAsset<Shader>($"{resourceReference}snowShader");
             //GlobalSnow/DeferredMaskWrite
-            cbMatExcludedObjects = new Material(DataLoader.LoadAsset<Shader>($"{resourceReference}MaskWrite"));
+            //  cbMatExcludedObjects = new Material(DataLoader.LoadAsset<Shader>($"{resourceReference}DeferredMaskWrite"));
+           cbMatExcludedObjects = new Material(DataLoader.LoadAsset<Shader>($"{resourceReference}MaskWrite"));
             var decalShader = DataLoader.LoadAsset<Shader>($"{resourceReference}DecalDraw");
             decalMat = new Material(decalShader)
             {

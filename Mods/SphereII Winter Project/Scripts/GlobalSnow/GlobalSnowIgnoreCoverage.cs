@@ -9,7 +9,7 @@ namespace GlobalSnowEffect {
 
         [SerializeField]
         [Tooltip("If this gameobject or any of its children can receive snow.")]
-        bool _receiveSnow;
+        bool _receiveSnow = false;
 
         public bool receiveSnow {
             get { return _receiveSnow;  }
@@ -19,7 +19,7 @@ namespace GlobalSnowEffect {
 
         [SerializeField]
         [Tooltip("If this gameobject or any of its children block snow down.")]
-        bool _blockSnow;
+        bool _blockSnow = true;
         public bool blockSnow {
             get { return _blockSnow; }
             set { _blockSnow = value; }
@@ -28,7 +28,7 @@ namespace GlobalSnowEffect {
 
         [SerializeField]
         [Tooltip("If enabled, Global Snow will use a fast mask shader to exclude snow from this object. If disabled, Global Snow will use the object material and shader, which can be a bit slower but more accurate. If shader uses displacement or vertex animation, disable this option.")]
-        bool _useFastMaskShader = true;
+        bool _useFastMaskShader = false;
         public bool useFastMaskShader {
             get { return _useFastMaskShader; }
             set { _useFastMaskShader = value; }
@@ -56,12 +56,21 @@ namespace GlobalSnowEffect {
 
         void OnEnable() {
             renderers = GetComponentsInChildren<Renderer>(true);
+            foreach (var render in renderers)
+            {
+                Debug.Log($"Renderer: {render} : {render.transform.name}");
+            }
             renderersLayers = new int[renderers.Length];
             snow = GlobalSnow.instance;
             if (snow != null) {
                 snow.IgnoreGameObject(this);
             }
+
+            _blockSnow = true;
+            _receiveSnow = false;
         }
+
+     
 
         void OnValidate() {
             UpdateSettings();
