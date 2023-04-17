@@ -14,7 +14,7 @@
   </append>
   
   <append xpath="/entitygroups/entitygroup[@name='ZombiesNight']">
-	<entity name="Abominable" prob="10" />
+	<entity name="Abominable" prob="3" />
   </append>  
 
   <append xpath="/entitygroups/entitygroup[@name='ZombiesAll']"> 

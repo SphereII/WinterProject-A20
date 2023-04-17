@@ -152,6 +152,11 @@
         <passive_effect name="HealthChangeOT" operation="base_set" value="1.1"/>
         <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
       </effect_group>
+		<effect_group name="No snow please" >
+          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
+       </effect_group>
+	  
+	  
       <property name="MoveSpeed" value="0.8"/>
       <property name="MoveSpeedAggro" value="0.8, 1.25"/>
       <property name="MoveSpeedPanic" value="0.9"/>
@@ -215,6 +220,10 @@
         <passive_effect name="HealthChangeOT" operation="base_set" value="1.2"/>
         <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
       </effect_group>
+		<effect_group name="No snow please" >
+          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
+       </effect_group>
+	  
     </entity_class>
 
     <entity_class name="DeadSnake" extends="animalTemplateHostile">
