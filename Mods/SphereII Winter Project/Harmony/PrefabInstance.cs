@@ -35,7 +35,12 @@ public class SphereII_WinterProject
             var harmony = new HarmonyLib.Harmony(GetType().ToString());
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
+            if (GameManager.IsDedicatedServer)
+                return;
+            
             modFolder = _modInstance.ModInfo.Name.Value;
+            
+            
             RegisterEvents();
 
         }
