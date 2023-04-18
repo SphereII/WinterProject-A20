@@ -47,7 +47,7 @@
                         <property name="ExperienceGain" value="800"/> 
 			<property name="LootDropProb" value="0.2"/> 
 			<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
-            
+	   </entity_class>	 
 		</append>	
 	
 </configs>
