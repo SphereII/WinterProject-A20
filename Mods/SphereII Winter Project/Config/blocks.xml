@@ -224,7 +224,7 @@
             <property name="MultiBlockDim" value="1,18,1"/>
             <property name="BigDecorationRadius" value="4"/>
             <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
-            <drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+            <drop event="Harvest" name="resourceWood" count="50" tag="oreWoodHarvest"/>
             <drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
             <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
             <property name="SortOrder2" value="0300"/>
@@ -238,7 +238,7 @@
             <property name="MultiBlockDim" value="1,14,1"/>
             <property name="BigDecorationRadius" value="4"/>
             <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
-            <drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+            <drop event="Harvest" name="resourceWood" count="50" tag="oreWoodHarvest"/>
             <drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
             <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
             <property name="SortOrder2" value="0300"/>
@@ -252,7 +252,7 @@
             <property name="MultiBlockDim" value="1,18,1"/>
             <property name="BigDecorationRadius" value="4"/>
             <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
-            <drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+            <drop event="Harvest" name="resourceWood" count="50" tag="oreWoodHarvest"/>
             <drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
             <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
             <property name="SortOrder2" value="0300"/>
@@ -266,7 +266,7 @@
             <property name="MultiBlockDim" value="1,12,1"/>
             <property name="BigDecorationRadius" value="4"/>
             <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
-            <drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+            <drop event="Harvest" name="resourceWood" count="50" tag="oreWoodHarvest"/>
             <drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
             <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
             <property name="SortOrder2" value="0300"/>
@@ -280,7 +280,7 @@
             <property name="MultiBlockDim" value="1,12,1"/>
             <property name="BigDecorationRadius" value="4"/>
             <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
-            <drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+            <drop event="Harvest" name="resourceWood" count="50" tag="oreWoodHarvest"/>
             <drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
             <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
             <property name="SortOrder2" value="0300"/>
@@ -294,7 +294,7 @@
             <property name="MultiBlockDim" value="1,16,1"/>
             <property name="BigDecorationRadius" value="4"/>
             <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
-            <drop event="Harvest" name="resourceWood" count="150" tag="oreWoodHarvest"/>
+            <drop event="Harvest" name="resourceWood" count="50" tag="oreWoodHarvest"/>
             <drop event="Destroy" name="treePlantedMountainPine1m" count="2"/>
             <property name="ParticleOnDeath" value="treeGib_burnt_75m"/>
             <property name="SortOrder2" value="0300"/>
@@ -309,7 +309,7 @@
             <property name="DescriptionKey" value="poinsettia"/>
             <drop event="Destroy" count="0"/>
             <drop event="Destroy" name="resourceClayLump" count="1,2" prob="1"/>
-            <drop event="Harvest" name="resourceClayLump" count="3" tool_category="harvestingTools"/>
+            <drop event="Harvest" name="resourceClayLump" count="5" tool_category="harvestingTools"/>
             <property name="CanPlayersSpawnOn" value="false"/>
             <property name="ParticleOnDeath" value="treeGib_small_dust"/>
         </block>
@@ -317,7 +317,7 @@
             <property name="Extends" value="poinsettia"/>
             <drop event="Destroy" count="0"/>
             <drop event="Destroy" name="resourceClayLump" count="1,2" prob="1"/>
-            <drop event="Harvest" name="resourceClayLump" count="3" tool_category="harvestingTools"/>
+            <drop event="Harvest" name="resourceClayLump" count="5" tool_category="harvestingTools"/>
         </block>
         <!-- Snow Fog Particles-->
         <block name="snowFog">
@@ -487,7 +487,7 @@
     
         
     </append>
-    
+    <!--  Not working ...yet  -->
     <append xpath="//block[property[@name='Material' and @value='Mglass']]">
         <property class="AttachScriptToTransform">
             <property name="temp" value="AddSnowToGlass" />

@@ -1,7 +1,7 @@
 ﻿<configs>
   <append xpath="/entitygroups/entitygroup[ (contains( @name, 'ombies')) or @name='HospitalGroup' or (contains(@name, 'HordeStage')) ]">
     <!--<entity name="zombieBurnt_white"/> -->
-    <entity name="zombieDemolition_white"  prob="0.3"/>
+    <entity name="zombieDemolition_white"  prob="0.1"/>
     <!--<entity name="zombieFarmer_white"/> 
     <entity name="zombieFatCop_white" prob="0.3"/>
     <entity name="zombieFatHawaiian_white"/> 

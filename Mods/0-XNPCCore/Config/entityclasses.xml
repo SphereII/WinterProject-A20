@@ -492,6 +492,10 @@
 			<property name="IsEnemyEntity" value="false"/> 
 			<property name="Faction" value="whiteriver"/>
 			
+			<!-- lazy addition for WW mod  -->
+			<effect_group name="No snow please" >
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
+			</effect_group> 
 			
 			
 			<!-- UAI overrides EAI if both exist -->
