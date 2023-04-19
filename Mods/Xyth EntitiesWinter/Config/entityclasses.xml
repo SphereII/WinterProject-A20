@@ -153,7 +153,7 @@
         <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
       </effect_group>
 		<effect_group name="No snow please" >
-          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
+          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Renderer" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
        </effect_group>
 	  
 	  
@@ -221,7 +221,7 @@
         <triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
       </effect_group>
 		<effect_group name="No snow please" >
-          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
+          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Renderer" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
        </effect_group>
 	  
     </entity_class>
