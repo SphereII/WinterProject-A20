@@ -2315,7 +2315,9 @@ namespace GlobalSnowEffect
                     {
                         maskMat = r.sharedMaterials[l];
                     }
-
+                    
+                    // Missing material on the shared material?
+                    if (maskMat == null) continue;
                     buf.DrawRenderer(r, maskMat, l);
                 }
             }
