@@ -1,7 +1,7 @@
 <configs>
   <append xpath="/entitygroups/entitygroup[ starts-with(@name, 'WildGameForest')]">
-	<entity name="npcCardboardBuddy" prob="2" />
-	<entity name="WinterSoldierClub" prob="3" />
+	<entity name="npcCardboardBuddy" prob="1" />
+	<entity name="WinterSoldierClub" prob="2" />
 	<entity name="WinterSoldierTRifle" prob="1" />
   </append>
 </configs>
