@@ -494,6 +494,7 @@
 			
 			<!-- lazy addition for WW mod  -->
 			<effect_group name="No snow please" >
+			<requirement name="!EntityTagCompare" target="self" tags="SnowMe"/>
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Renderer" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
 			</effect_group> 
 			
@@ -3725,7 +3726,7 @@
 		<!--  Baker  -->
 
 		<entity_class name="npcBakerEmptyHand" extends="npcEmptyHandTemplate"> 
-			<property name="Tags" value="entity,male,npc,melee,DRMid"/>
+			<property name="Tags" value="entity,male,npc,melee,DRMid,SnowMe"/>
 			<property name="Faction" value="whiteriver"/>
 			<property name="Names" value="Bob,Billy,Beau,Ben,Brody,Byron,Brian,Bruce" />				
 			<property name="Mesh" value="#@modfolder:Resources/XythNPCs.unity3d?Baker_X"/> 
@@ -3733,8 +3734,18 @@
 				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="HasBackpack"/>		
 			</effect_group>	
 			<effect_group name="IsTimid"> <!-- This activates the Timid behavior -->
-				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="Timid"/>		
+				<triggered_effect trigger="onSelfFirstSpawn" action="AddBuff" target="self" buff="Timid"/>
 			</effect_group>	
+			
+
+
+          <!-- <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/> -->
+			
+			
+			
+			
+			
+			
 		</entity_class>	
 
 		<entity_class name="npcBakerClub" extends="npcAdvancedClubTemplate"> 
