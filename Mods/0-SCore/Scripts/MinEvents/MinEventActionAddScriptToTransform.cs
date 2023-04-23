@@ -17,6 +17,7 @@ using UnityEngine;
 
 // <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
 // <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="RigidBody" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
+// <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Renderer" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
 // <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="EntityAlive" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
 
 //<triggered_effect trigger="onSelfBuffStart" action="AddScriptToTransform, SCore" transform="Head" script="whatever, SCore" /> 
@@ -59,6 +60,18 @@ public class MinEventActionAddScriptToTransform : MinEventActionBuffModifierBase
                 foreach (var component in root.GetComponentsInChildren<EntityAlive>())
                     CheckComponentForScript(component, type);
             }
+            
+            if (_component == "Renderer")
+            {
+                foreach (var component in root.GetComponentsInChildren<Renderer>())
+                    CheckComponentForScript(component, type);
+            }
+            
+            if (_component == "Collider")
+            {
+                foreach (var component in root.GetComponentsInChildren<Collider>())
+                    CheckComponentForScript(component, type);
+            }
         }
 
         base.Execute(_params);
@@ -77,7 +90,7 @@ public class MinEventActionAddScriptToTransform : MinEventActionBuffModifierBase
             var component = child.gameObject.GetComponent(_script);
             if (component != null) continue;
 
-            Debug.Log($"Adding {_script} to {child.name}");
+         //   Debug.Log($"Adding {_script} to {child.name}");
             child.gameObject.AddComponent(type);
             
             
@@ -87,7 +100,7 @@ public class MinEventActionAddScriptToTransform : MinEventActionBuffModifierBase
     {
         var component2 = component.transform.gameObject.GetComponent(_script);
         if (component2 != null) return; // Already attached
-        Debug.Log($"Adding {_script}");
+      //  Debug.Log($"Adding {_script}");
 
         component.transform.gameObject.AddComponent(type);
     }

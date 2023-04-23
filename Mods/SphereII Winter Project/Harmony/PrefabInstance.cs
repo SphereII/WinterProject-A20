@@ -44,6 +44,31 @@ public class SphereII_WinterProject
             RegisterEvents();
 
         }
+        
+        // [HarmonyPatch(typeof(global::EntityAlive))]
+        // [HarmonyPatch("playStepSound")]
+        // public class EntityAliveplayStepSound
+        // {
+        //     private static EntityPlayerLocal _player;
+        //
+        //     public static void Postfix(global::EntityAlive __instance)
+        //     {
+        //         if (__instance is EntityPlayerLocal) return;
+        //         var snow = GlobalSnow.instance;
+        //         if (snow == null) return;
+        //         
+        //         //var position = __instance.transform.InverseTransformDirection(__instance.position);
+        //
+        //
+        //         if ( _player == null )
+        //             _player = GameManager.Instance.World.GetPrimaryPlayer();
+        //
+        //         var position = _player.playerCamera.transform.InverseTransformPoint(__instance.position);
+        //         Debug.Log($"Setting Footprint at :{position} towards: {__instance.moveDirection}");
+        //         snow.FootprintAt(position, __instance.moveDirection);
+        //
+        //     }
+        // }
 
 
         private void RegisterEvents()

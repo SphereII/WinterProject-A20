@@ -8,8 +8,51 @@ The 0-SCore is the key component to enable extra functionality for 7 Days To Die
 | Harmony | Many harmony scripts to make small adjustments to the game. These scripts, for the most part, can be turned on and off via the blocks.xml|
 | Scripts | Many Scripts which include new classes. References to these scripts would be  ```<className>, SCore```  |
 
+Each release could potentially include fixes or entries here that say "Code Cleanup". This implies that the functionality remained the same, 
+but was just refactored in someway. This may include additional null checks, formatting issues, or variable renames. XML hooks will remain unchanged.
 
 [ Change Log ]
+Version: 20.6.478.1822
+
+	[ Fire Manager ] 
+		- Re-added main thread check for adding sounds.
+
+	[ HoldingItemDurability ]
+		- Addes a new Buff Requirement that tests the item durability of the holding item:
+			<requirement name="HoldingItemDurability, SCore" value="0.5"/>
+
+	[ Sound / Buff / Quest ]
+		- Code cleanup.
+
+	[ MinEventActionAddScriptToTransform ] 
+		- This will attach scripts to entity's using the minevent.
+		- This is probably okay to try to use.
+		- It will recursively go through the entity's, walking through all its transform, looking for matches.
+			- If more than one match is found, the script is added to each one.
+			- At least one component, or one transform, must be defined. 
+			- A component and transform values are both valid, on the same event.
+				- The script will be attached to every component and transform that is found.
+
+			<triggered_effect trigger="onSelfEnteredGame" 
+				action="AddScriptToTransform, SCore"
+				component="Animator"	// Optional: Add the script to this component, regardless of transform name.
+				transform="Camera" 		// Optional: Add the script to the transform that has this name.
+				script="GlobalSnowEffect.GlobalSnow, BetterBiomeEffects"/>  // Namespace.Class, Assembly
+
+		- This MinEvent supports the following:
+			- Transform: This searches for the transform with matching name.
+				<triggered_effect trigger="onSelfEnteredGame" action="AddScriptToTransform, SCore" transform="Camera" script="GlobalSnowEffect.GlobalSnow, BetterBiomeEffects"/>
+
+			- Component: This searches for the type of component. 
+				Supported Components:  Animator, RigidBody, Renderer, EntityAlive, Collider
+
+			Example:
+				<triggered_effect trigger="onSelfEnteredGame" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnow, BetterBiomeEffects"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddScriptToTransform, SCore" component="RigidBody" script="GlobalSnowEffect.GlobalSnow, BetterBiomeEffects"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddScriptToTransform, SCore" component="Renderer" script="GlobalSnowEffect.GlobalSnow, BetterBiomeEffects"/>
+				<triggered_effect trigger="onSelfEnteredGame" action="AddScriptToTransform, SCore" component="EntityAlive" script="GlobalSnowEffect.GlobalSnow, BetterBiomeEffects"/>
+
+
 Version:  20.6.467.917
 
 	[ Quests ]

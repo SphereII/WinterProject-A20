@@ -27,7 +27,16 @@ namespace GlobalSnowEffect {
         void Start()
         {
             isFootprint = true;
+            Debug.Log("Loaded Footprint script.");
+            // var collider = GetComponent<SphereCollider>();
+            // if ( collider == null) Debug.Log("No Collider");
+            // else
+            // {
+            //     Debug.Log("Collider Found.");
+            // }
         }
+        
+        
         void OnCollisionStay(Collision collision) {
             GlobalSnow snow = GlobalSnow.instance;
             if (snow != null) {

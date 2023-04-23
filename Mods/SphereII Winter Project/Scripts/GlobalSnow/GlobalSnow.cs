@@ -1928,14 +1928,13 @@ namespace GlobalSnowEffect
                         return;
                     }
 
-                    Debug.LogError("Snow shader not found. Workflow_Forward folder under Resources might be removed?");
+                    
                     enabled = false;
                     return;
                 }
 
                 if (!snowShader.isSupported)
                 {
-                    Debug.LogError("Snow shader not supported on this platform.");
                     enabled = false;
                     return;
                 }
@@ -1945,7 +1944,6 @@ namespace GlobalSnowEffect
                     eraseShader = Shader.Find("GlobalSnow/EraseShader");
                     if (!eraseShader.isSupported)
                     {
-                        Debug.LogError("EraseShader shader not supported on this platform.");
                         enabled = false;
                         return;
                     }
@@ -3672,7 +3670,6 @@ namespace GlobalSnowEffect
                     go.hideFlags = HideFlags.DontSave;
                     if (go == null)
                     {
-                        Debug.LogError("SnowParticleSystem not found.");
                         _snowfall = false;
                     }
                     else
@@ -3800,7 +3797,7 @@ namespace GlobalSnowEffect
                     go.hideFlags = HideFlags.DontSave;
                     if (go == null)
                     {
-                        Debug.LogError("SnowDustSystem not found.");
+                        
                         _snowdustIntensity = 0;
                     }
                     else

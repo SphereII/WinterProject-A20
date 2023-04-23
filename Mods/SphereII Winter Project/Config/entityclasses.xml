@@ -23,8 +23,9 @@
 												starts-with(@name, 'zombieBiker') or
                                                	starts-with(@name, 'zombieDemolition')]">
       <effect_group name="No snow please on these vanilla zeds" >
-          <triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/>
-       </effect_group>
+          <!--<triggered_effect trigger="onSelfFirstSpawn" action="AddScriptToTransform, SCore" component="Animator" script="GlobalSnowEffect.GlobalSnowIgnoreCoverage, SphereII_Winter_Project"/> -->
+
+      </effect_group>
 	</append>
 
 
